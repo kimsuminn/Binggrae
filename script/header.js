@@ -5,13 +5,13 @@ function headerTop() {
   let menuName = [
     {
       name: '구매포털시스템',
-      img: '../img/main/link_arrow02.png',
+      img: 'https://kimsuminn.github.io/binggrae/img/main/link_arrow02.png',
       alt: 'link_arrow',
       link: '#'
     },
     {
       name: '인재채용',
-      img: '../img/main/link_arrow02.png',
+      img: 'https://kimsuminn.github.io/binggrae/img/main/link_arrow02.png',
       alt: 'link_arrow',
       link: '#'
     }
@@ -40,12 +40,12 @@ function headerContainer() {
   function sec01() {
     let logo = [
       {
-        img: '../img/main/logo-pc.png',
+        img: 'https://kimsuminn.github.io/binggrae/img/main/logo-pc.png',
         alt: 'logo',
         className: 'web'
       },
       {
-        img: '../img/main/logo_mo.png',
+        img: 'https://kimsuminn.github.io/binggrae/img/main/logo_mo.png',
         alt: 'logo',
         className: 'mo'
       }
@@ -59,7 +59,7 @@ function headerContainer() {
     }).join("");
   
     section01.innerHTML = `
-      <a href="/">
+      <a href="/binggrae/">
         ${logoList}
       </a>
     `;
@@ -164,6 +164,28 @@ function headerContainer() {
   }
 
   sec02();
+
+  function sec03() {
+    let section03 = document.querySelector('.header_sec03');
+  }
 }
 
 headerContainer();
+
+
+function headerScroll() {
+  let header = document.querySelector('header');
+  let headerSection = document.querySelector('header .header_container .header_section');
+
+  document.addEventListener('scroll', () => {
+    if (scrollY > 0) {
+      header.style.backgroundColor = '#fff';
+      headerSection.style.borderBottom = '1px solid #e7e7e7';
+    } else {
+      header.style.backgroundColor = 'transparent';
+      headerSection.style.borderBottom = '1px solid transparent';
+    }
+  })
+}
+
+headerScroll();

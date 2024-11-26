@@ -17,6 +17,10 @@ html {
   user-select: none;
 }
 
+body {
+  height: 150vh;
+}
+
 /* reset */
 * {
   margin: 0;

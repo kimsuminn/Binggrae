@@ -2,3 +2,21 @@
 .mo {
   display: none;
 }
+
+@media screen and (max-width: 1024px) {
+  .web {
+    display: none;
+  }
+
+  .mo {
+    display: block;
+  }
+
+  .header_top {
+    display: none;
+  }
+
+  .header_sec02 {
+    display: none;
+  }
+}
