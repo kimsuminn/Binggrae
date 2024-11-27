@@ -184,7 +184,9 @@ function headerContainer() {
 
     let langBtn = section03.querySelector('.lang p');
     langBtn.addEventListener('click', () => {
+      let headerContainer = document.querySelector('header .header_container');
       let langList = section03.querySelector('.lang ul');
+      headerContainer.classList.toggle('on');
       langList.classList.toggle('on');
     })
 
