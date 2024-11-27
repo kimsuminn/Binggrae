@@ -56,7 +56,7 @@ header {
 header .header_container {
   width: 100%;
   height: 120px;
-  overflow: hidden;
+  overflow: visible;
   transition: .5s;
 }
 
@@ -72,6 +72,7 @@ header .header_container {
   transition: .5s;
 }
 
+/* logo */
 .header_sec01 {
   height: 100%;
   display: flex;
@@ -84,6 +85,7 @@ header .header_container {
   height: 35px;
 }
 
+/* header menu */
 .header_sec02 {
   height: 100%;
 }
@@ -154,7 +156,7 @@ header .header_container {
 }
 
 .header_sec02 .gnb01 .depth01 > li > .depth02 > li > a {
-  font-size: clamp(0.9rem, 1vw, 1.1rem);
+  font-size: 1rem;
   transition: .3s;
 }
 
@@ -162,6 +164,7 @@ header .header_container {
   color: #E72F28;
 }
 
+/* lang */
 .header_sec03 {
   height: 100%;
 }
@@ -169,14 +172,58 @@ header .header_container {
 .header_sec03 .right {
   height: 100%;
   display: flex;
-  gap: 3rem;
+  gap: 2rem;
   align-items: center;
-  background-color: aliceblue;
 }
 
+.header_sec03 .right .lang {
+  height: 100%;
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  font-weight: 700;
+  align-content: center;
+  position: relative;
+}
+
+.header_sec03 .right .lang p {
+  height: 100%;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  cursor: pointer;
+}
+
+.header_sec03 .right .lang ul {
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  top: calc(50% + 1rem);
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: .5s;
+}
+
+.header_sec03 .right .lang ul.on {
+  height: 64px;
+}
+
+.header_sec03 .right .lang ul li {
+  padding: 0.25rem 1rem;
+}
+
+.header_sec03 .right .lang ul li:first-child {
+  padding-bottom: 0;
+}
+
+/* hamberger */
 .header_sec03 .right .hamberger {
   width: 24px;
-  height: 24px;
+  height: 20px;
   cursor: pointer;
 }
 
@@ -193,4 +240,17 @@ header .header_container {
   height: 2px;
   background-color: #1b1b1b;
   border-radius: 30px;
+  transition: .5s;
+}
+
+.header_sec03 .right .hamberger a.on span:first-child {
+  transform: translateY(9px) rotate(-45deg) ;
+}
+
+.header_sec03 .right .hamberger a.on span:nth-child(2) {
+  opacity: 0;
+}
+
+.header_sec03 .right .hamberger a.on span:last-child {
+  transform: translateY(-9px) rotate(45deg);
 }

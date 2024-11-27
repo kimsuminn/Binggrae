@@ -166,8 +166,59 @@ function headerContainer() {
   sec02();
 
   function sec03() {
-    let section03 = document.querySelector('.header_sec03');
+    let section03 = document.querySelector('.header_sec03 .right');
+    section03.innerHTML = `
+      <div class="lang">
+        <p>
+          <span>KR</span>
+          <span class="triangle">
+            <img src="https://kimsuminn.github.io/binggrae/img/layout/lang_btn.png" alt="lang_btn">
+          </span>
+        </p>
+        <ul>
+          <li><a href="/binggrae/">KR</a></li>
+          <li><a href="#">EN</a></li>
+        </ul>
+      </div>
+    `;
+
+    let langBtn = section03.querySelector('.lang p');
+    langBtn.addEventListener('click', () => {
+      let langList = section03.querySelector('.lang ul');
+      langList.classList.toggle('on');
+    })
+
+    // hamberger
+    let ham = document.createElement('div');
+    ham.classList.add('hamberger');
+    section03.appendChild(ham);
+
+    ham.innerHTML = `
+      <a href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+    `;
+
+    let section02 = document.querySelector('header .header_container .header_section .header_sec02');
+    let hamBtn = document.querySelector('.header_sec03 .right .hamberger a');
+    hamBtn.addEventListener('click', () => {
+      hamBtn.classList.toggle('on');
+
+      console.log(innerWidth);
+  
+      if (hamBtn.classList.contains('on')) {
+        section02.style.display = 'none';
+      } else {
+        if (innerWidth > 1024) {
+          section02.style.display = 'block';
+        }
+      }
+    })
   }
+
+  sec03();
 }
 
 headerContainer();
