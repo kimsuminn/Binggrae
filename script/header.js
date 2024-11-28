@@ -383,7 +383,7 @@ function hamMenu() {
 
     lang.classList.add('lang_2');
     lang.innerHTML = `
-      <li class='on'><a href="/">KR</a></li>
+      <li class='on'><a href="/binggrae/">KR</a></li>
       <li><a href="#">EN</a></li>
     `;
 
