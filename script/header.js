@@ -137,7 +137,10 @@ function headerContainer() {
       let subMenu = document.querySelectorAll('header .header_container .header_section .header_sec02 .gnb01 .depth01 > li > .depth02');
 
       subMenu.forEach(val => {
-        val.style.opacity = `${op}`;
+        let subMenuList = val.querySelectorAll('li');
+        subMenuList.forEach(val => {
+          val.style.opacity = `${op}`;
+        })
       })
     }
 
@@ -205,16 +208,32 @@ function headerContainer() {
 
     let section02 = document.querySelector('header .header_container .header_section .header_sec02');
     let hamBtn = document.querySelector('.header_sec03 .right .hamberger a');
+    let hamMenu = document.querySelector('.hamberger_menu');
+    let hamContainer = document.querySelector('.hamberger_menu .ham_container');
+
     hamBtn.addEventListener('click', () => {
       hamBtn.classList.toggle('on');
 
-      console.log(innerWidth);
-  
       if (hamBtn.classList.contains('on')) {
         section02.style.display = 'none';
+        hamMenu.style.right = '0';
+        hamContainer.style.width = window.innerWidth > 1024 ? '100%' : '55%';
       } else {
+        hamMenu.style.right = '-150%';
         if (innerWidth > 1024) {
           section02.style.display = 'block';
+        }
+      }
+    })
+
+    window.addEventListener('resize', () => {
+      if (hamBtn.classList.contains('on')) {
+        hamContainer.style.width = window.innerWidth > 1024 ? '100%' : '55%';
+      } else {
+        if (window.innerWidth > 1024) {
+          section02.style.display = 'block';
+        } else {
+          section02.style.display = 'none';
         }
       }
     })
@@ -242,3 +261,76 @@ function headerScroll() {
 }
 
 headerScroll();
+
+function hamMenu() {
+  // section 02
+  let hamSection02 = document.querySelector('.hamberger_menu .ham_container .ham_sec02');
+  
+  let depth01 = document.createElement('ul');
+  depth01.classList.add('depth01');
+
+  let hamMenuList = [
+    {
+      main: '회사소개',
+      sub: ['CEO 인사말', '경영이념', '사업분야', '히스토리']
+    },
+    {
+      main: '제품소개',
+      sub: ['전체보기', '아이스크림', '우유/치즈', '발효유', '커피', '주스', '음료', '스낵/디저트', '건강지향', '수출제품']
+    },
+    {
+      main: '지속가능경영',
+      sub: ['지속가능경영 체계', 'Eco-Friendly', 'Shared Value', 'Global Integrity', '윤리준법경영', '사회공헌', '보고서 및 정책']
+    },
+    {
+      main: '투자정보',
+      sub: ['재무정보', '주식정보', '전자공고', '공시정보', 'IR자료실']
+    },
+    {
+      main: '뉴스룸',
+      sub: ['새소식', '보도자료', '빙그레 스토리', '미디어 라이브러리']
+    },
+    {
+      main: '고객상담',
+      sub: ['고객상담', '1:1 문의하기', '제품공급문의', '사이버 신고센터', '안전신문고', '개인정보처리방침']
+    }
+  ]
+
+  let hamInner = hamMenuList.map(val => {
+    let subMenu = val.sub;
+    let subMenuList = subMenu.map(val => {
+      return `
+        <li>
+          <a href="#">${val}</a>
+          <figure class="web"><img src="./img/layout/pc_ham_hover_img.png" alt="ham_hover"></figure>
+        </li>
+      `;
+    }).join("");
+
+    return `
+      <li>
+        <a href="#">
+          <span>${val.main}</span>
+          <figure class="mo"><img src="./img/main/m_ham_menu_btn.png" alt="mo"></figure>
+        </a>
+        <ul class="depth02">
+          ${subMenuList}
+        </ul>
+      </li>
+    `;
+  }).join("");
+
+  depth01.innerHTML = hamInner;
+  hamSection02.appendChild(depth01);
+
+  // close btn
+  let closeBtn = document.querySelector('.hamberger_menu .ham_container .ham_sec01 button');
+  let hamBtn = document.querySelector('.header_sec03 .right .hamberger a');
+  let hamMenu = document.querySelector('.hamberger_menu');
+  closeBtn.addEventListener('click', () => {
+    hamMenu.style.width = '0';
+    hamBtn.classList.toggle('on');
+  })
+}
+
+hamMenu();

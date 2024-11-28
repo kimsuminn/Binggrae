@@ -3,6 +3,50 @@
   display: none;
 }
 
+@media screen and (max-width: 1563px) {
+  .ham_sec02 .depth01 > li {
+    padding: 1.5rem 1rem;
+  }
+
+  .ham_sec02 .depth01 > li > a {
+    font-size: clamp(1.2rem, 1vw, 1.5rem);
+  }
+
+  .ham_sec02 .depth01 > li .depth02 > li:not(.in_ul) a {
+    font-size: clamp(0.9rem, 1vw, 1rem);
+  }
+
+  .ham_sec02 .depth01 > li .depth02 > li.in_ul div a {
+    font-size: clamp(0.9rem, 1vw, 1rem);
+  }
+
+  .ham_sec02 .depth01 > li .depth02 > li.in_ul .depth03 {
+    font-size: clamp(0.7rem, 1vw, 0.9rem);
+  }
+}
+
+@media screen and (max-width: 1190px) {
+  .header_sec02 .gnb01 .depth01 > li {
+    padding: 0 1rem;
+  }
+
+  .ham_sec02 .depth01 > li {
+    padding: 1.5rem 1rem;
+  }
+
+  .ham_sec02 .depth01 > li > a {
+    font-size: 1.1rem;
+  }
+
+  .ham_sec02 .depth01 > li .depth02 > li:not(.in_ul) a {
+    font-size: 0.8rem;
+  }
+
+  .ham_sec02 .depth01 > li .depth02 > li.in_ul div a {
+    font-size: 0.8rem;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .web {
     display: none;
@@ -12,11 +56,83 @@
     display: block;
   }
 
+  /* header */
   .header_top {
     display: none;
   }
 
   .header_sec02 {
     display: none;
+  }
+
+  /* hamberger menu */
+  nav.hamberger_menu {
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+  }
+
+  .ham_container {
+    width: 55%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    transform: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+    border-start-start-radius: 40px;
+    transition: .4s;
+  }
+
+  .ham_sec01, .ham_sec03 {
+    display: block;
+  }
+
+  .ham_sec01 .sec01_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: antiquewhite;
+  }
+
+  .ham_sec01 ul {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .ham_sec01 ul li {
+    border: 1px solid #ccc;
+  }
+
+  .ham_sec01 ul li a {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+    color: #1f1f1f;
+    font-weight: 500;
+    letter-spacing: -0.1rem;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0;
+  }
+
+  .ham_sec02 {
+    flex: 1;
+    overflow: scroll;
+  }
+
+  .ham_sec02 .depth01 {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 0.5rem;
+    margin: 0 2.5rem;
+    padding: 0 2.5rem;
+    transition: .5s;
   }
 }

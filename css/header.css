@@ -9,7 +9,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 9998;
   transition: .8s;
 }
 
@@ -73,7 +73,7 @@ header .header_container.on {
   align-items: center;
   position: relative;
   border-bottom: 1px solid transparent;
-  transition: .5s;
+  transition: .3s;
 }
 
 /* logo */
@@ -106,7 +106,7 @@ header .header_container.on {
 .header_sec02 .gnb01 .depth01 > li {
   height: 100%;
   position: relative;
-  padding: 0 calc(1.5rem + 1vw);
+  padding: 0 2rem;
 }
 
 .header_sec02 .gnb01 .depth01 > li > a {
@@ -149,14 +149,20 @@ header .header_container.on {
   width: 100%;
   height: 420px;
   position: absolute;
-  top: calc(100% + 0.5rem);
-  opacity: 0;
-  transition: .5s;
+  top: 100%;
+  display: none;
+  padding-top: 1rem;
+}
+
+.header_sec02:hover .gnb01 .depth01 > li > .depth02 {
+  display: block;
 }
 
 .header_sec02 .gnb01 .depth01 > li > .depth02 > li {
   width: 100%;
   padding: 0.5rem 0;
+  opacity: 0;
+  transition: .8s;
 }
 
 .header_sec02 .gnb01 .depth01 > li > .depth02 > li > a {
@@ -257,4 +263,140 @@ header .header_container.on {
 
 .header_sec03 .right .hamberger a.on span:last-child {
   transform: translateY(-9px) rotate(45deg);
+}
+
+/* hamberger menu */
+nav.hamberger_menu {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  background-color: #fff;
+}
+
+.black_bg {
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/layout/pc_ham_bg.png);
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+
+.ham_container {
+  width: 100%;
+  height: fit-content;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: .5s;
+}
+
+.ham_sec01, .ham_sec03 {
+  display: none;
+}
+
+.ham_sec02 {
+  width: 100%;
+  height: fit-content;
+  align-content: center;
+}
+
+.ham_sec02 .depth01 {
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0.5rem;
+  margin: 0 2.5rem;
+  padding: 0 2.5rem;
+  transition: .5s;
+}
+
+.ham_sec02 .depth01 > li {
+  padding: 3rem 2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: #fff;
+  border: 1px solid #e0dfe299;
+  border-radius: 20px;
+  transition: .5s;
+}
+
+.ham_sec02 .depth01 > li:hover {
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  transform: translateY(-1rem);
+}
+
+.ham_sec02 .depth01 > li > a {
+  font-size: clamp(1.5rem, 1vw, 2.5rem);
+  font-family: "Binggrae-Bold";
+  transition: .3s;
+}
+
+.ham_sec02 .depth01 > li:hover > a {
+  color: #E72F28;
+}
+
+.ham_sec02 .depth01 > li .depth02 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ham_sec02 .depth01 > li .depth02 > li {
+  transition: .3s;
+}
+
+.ham_sec02 .depth01 > li .depth02 > li:not(.in_ul) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ham_sec02 .depth01 > li .depth02 > li:not(.in_ul) a {
+  font-size: clamp(1rem, 1vw, 1.2rem);
+  transition: .3s;
+}
+
+.ham_sec02 .depth01 > li .depth02 > li:not(.in_ul) figure {
+  display: none;
+}
+
+.ham_sec02 .depth01 > li .depth02 > li:not(.in_ul):hover a {
+  color: #E72F28;
+}
+
+.ham_sec02 .depth01 > li .depth02 > li:not(.in_ul):hover figure {
+  display: block;
+}
+
+.ham_sec02 .depth01 > li .depth02 > li.in_ul div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ham_sec02 .depth01 > li .depth02 > li.in_ul div a {
+  font-size: clamp(1rem, 1vw, 1.2rem);
+  transition: .3s;
+}
+
+.ham_sec02 .depth01 > li .depth02 > li.in_ul div figure {
+  display: none;
+}
+
+.ham_sec02 .depth01 > li .depth02 > li.in_ul:hover div a {
+  color: #E72F28;
+}
+
+.ham_sec02 .depth01 > li .depth02 > li.in_ul:hover div figure {
+  display: block;
+}
+
+.ham_sec02 .depth01 > li .depth02 > li.in_ul .depth03 {
+  font-size: clamp(0.7rem, 1vw, 1rem);
+  color: #343434cc;
 }
