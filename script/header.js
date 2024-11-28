@@ -430,6 +430,15 @@ window.addEventListener('resize', () => {
     if (innerWidth > 1024) {
       val.style.height = 'auto';
     } else if (innerWidth <= 1024) {
+      let arrowBtn = document.querySelectorAll('.hamberger_menu .ham_container .ham_sec02 .depth01 > li');
+
+      arrowBtn.forEach(val => {
+        let arrowImg = val.querySelector('.mo img');
+
+        if (arrowImg.classList.contains('on')){
+          arrowImg.classList.remove('on');
+        }
+      })
       val.style.height = '0';
     }
   })

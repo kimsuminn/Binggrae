@@ -12,16 +12,8 @@
     font-size: clamp(1.2rem, 1vw, 1.5rem);
   }
 
-  .ham_sec02 .depth01 > li .depth02 > li:not(.in_ul) a {
+  .ham_sec02 .depth01 > li .depth02 > li a {
     font-size: clamp(0.9rem, 1vw, 1rem);
-  }
-
-  .ham_sec02 .depth01 > li .depth02 > li.in_ul div a {
-    font-size: clamp(0.9rem, 1vw, 1rem);
-  }
-
-  .ham_sec02 .depth01 > li .depth02 > li.in_ul .depth03 {
-    font-size: clamp(0.7rem, 1vw, 0.9rem);
   }
 }
 
@@ -38,11 +30,7 @@
     font-size: 1.1rem;
   }
 
-  .ham_sec02 .depth01 > li .depth02 > li:not(.in_ul) a {
-    font-size: 0.8rem;
-  }
-
-  .ham_sec02 .depth01 > li .depth02 > li.in_ul div a {
+  .ham_sec02 .depth01 > li .depth02 > li a {
     font-size: 0.8rem;
   }
 }
@@ -81,6 +69,10 @@
 
   .header_sec02 {
     display: none;
+  }
+
+  .header_sec03 .right .lang {
+    font-size: 1.1rem;
   }
 
   /* hamberger menu */
@@ -287,8 +279,18 @@
     height: 30px;
   }
 
+  .header_sec03 .right .hamberger {
+    width: 20px;
+    height: 16px;
+  }
+
   .ham_container {
     width: 90%;
     border-start-start-radius: 20px;
+  }
+
+  .ham_sec01 .sec01_container button {
+    width: 16px;
+    height: 16px;
   }
 }

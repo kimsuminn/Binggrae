@@ -188,7 +188,7 @@ header .header_container.on {
 
 .header_sec03 .right .lang {
   height: 100%;
-  font-size: clamp(0.9rem, 1vw, 1rem);
+  font-size: 1rem;
   font-weight: 700;
   align-content: center;
   position: relative;
@@ -235,6 +235,7 @@ header .header_container.on {
   width: 24px;
   height: 20px;
   cursor: pointer;
+  transition: .3s;
 }
 
 .header_sec03 .right .hamberger a {
