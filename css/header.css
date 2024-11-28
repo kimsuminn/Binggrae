@@ -85,8 +85,8 @@ header .header_container.on {
 
 .header_sec01 a {
   display: block;
-  width: 144px;
-  height: 35px;
+  width: fit-content;
+  height: fit-content;
 }
 
 /* header menu */

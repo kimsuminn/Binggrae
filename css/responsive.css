@@ -65,6 +65,20 @@
     display: none;
   }
 
+  header .header_container {
+    height: 100px;
+  }
+
+  .header_container .header_section {
+    height: 100px;
+    padding: 0 1rem;
+  }
+
+  .header_sec01 a {
+    width: 144px;
+    height: 35px;
+  }
+
   .header_sec02 {
     display: none;
   }
@@ -268,6 +282,11 @@
 }
 
 @media screen and (max-width: 769px) {
+  .header_sec01 a {
+    width: 120px;
+    height: 30px;
+  }
+
   .ham_container {
     width: 90%;
     border-start-start-radius: 20px;
