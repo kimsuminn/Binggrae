@@ -48,6 +48,10 @@
 }
 
 @media screen and (max-width: 1024px) {
+  html {
+    font-size: 14px;
+  }
+
   .web {
     display: none;
   }
@@ -67,6 +71,7 @@
 
   /* hamberger menu */
   nav.hamberger_menu {
+    width: 100% !important;
     background-color: rgba(0, 0, 0, 0.1);
     z-index: 9999;
   }
@@ -82,7 +87,6 @@
     justify-content: space-between;
     background-color: #fff;
     border-start-start-radius: 40px;
-    transition: .4s;
   }
 
   .ham_sec01, .ham_sec03 {
@@ -93,20 +97,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    background-color: antiquewhite;
+    padding: 1.5rem;
+    border-bottom: 1px solid #ccc;
   }
 
-  .ham_sec01 ul {
+  .ham_sec01 .sec01_container ul {
     display: flex;
     gap: 1rem;
   }
 
-  .ham_sec01 ul li {
+  .ham_sec01 .sec01_container ul li {
     border: 1px solid #ccc;
+    border-radius: 30px;
+    padding: 0.25rem 1rem;
   }
 
-  .ham_sec01 ul li a {
+  .ham_sec01 .sec01_container ul li a {
     display: flex;
     gap: 0.25rem;
     align-items: center;
@@ -115,24 +121,155 @@
     letter-spacing: -0.1rem;
   }
 
+  .ham_sec01 .sec01_container button {
+    width: 24px;
+    height: 24px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
   ::-webkit-scrollbar {
     width: 0;
   }
 
   .ham_sec02 {
+    align-content: flex-start;
     flex: 1;
     overflow: scroll;
   }
 
   .ham_sec02 .depth01 {
-    height: fit-content;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
-    gap: 0.5rem;
-    margin: 0 2.5rem;
-    padding: 0 2.5rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .ham_sec02 .depth01 > li {
+    padding: 0;
+    flex: 1;
+    gap: 0;
+    border: none;
+    border-radius: 0;
     transition: .5s;
+  }
+  
+  .ham_sec02 .depth01 > li:hover {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+  
+  .ham_sec02 .depth01 > li > a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    font-size: 1.5rem;
+    transition: 0;
+  }
+
+  .ham_sec02 .depth01 > li > a img {
+    width: 12px;
+  }
+
+  .ham_sec02 .depth01 > li > a img.on {
+    transform: rotate(180deg);
+  }
+  
+  .ham_sec02 .depth01 > li:hover > a {
+    color: inherit;
+  }
+  
+  .ham_sec02 .depth01 > li .depth02 {
+    height: 0;
+    overflow: hidden;
+    gap: 0;
+    transition: .5s;
+  }
+  
+  .ham_sec02 .depth01 > li .depth02 > li {
+    height: 50px;
+    padding: 0 2rem;
+    background-color: #F7F7F7;
+  }
+
+  .ham_sec02 .depth01 > li .depth02 > li a {
+    font-size: 1.2rem !important;
+    color: #8a8a8a;
+    position: relative;
+  }
+
+  .ham_sec02 .depth01 > li .depth02 > li a::after {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    border-radius: 100%;
+    background-color: #E72F28;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    margin-left: .25rem;
+    transition: 1s;
+  }
+  
+  .ham_sec02 .depth01 > li .depth02 > li figure {
+    display: none;
+  }
+  
+  .ham_sec02 .depth01 > li .depth02 > li:hover a {
+    color: #E72F28;
+  }
+
+  .ham_sec02 .depth01 > li .depth02 > li:hover a::after {
+    opacity: 1;
+  }
+  
+  .ham_sec02 .depth01 > li .depth02 > li:hover figure {
+    display: none;
+  }
+
+  .ham_sec03 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+  }
+
+  .ham_sec03 .lang_2 {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .ham_sec03 .lang_2 li {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1f1f1f4d;
+  }
+
+  .ham_sec03 .lang_2 li.on {
+    color: #1f1f1f;
+  }
+
+  .ham_sec03 .lang_2 li.on::after {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    background-color: #1f1f1f4d;
+    margin-left: 1rem;
+  }
+
+  .ham_sec03 > a {
+    font-size: 1.1rem;
+    color: #1f1f1f;
+    letter-spacing: -0.1rem;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .ham_container {
+    width: 90%;
+    border-start-start-radius: 20px;
   }
 }

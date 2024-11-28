@@ -217,24 +217,11 @@ function headerContainer() {
       if (hamBtn.classList.contains('on')) {
         section02.style.display = 'none';
         hamMenu.style.right = '0';
-        hamContainer.style.width = window.innerWidth > 1024 ? '100%' : '55%';
       } else {
-        hamMenu.style.right = '-150%';
         if (innerWidth > 1024) {
           section02.style.display = 'block';
         }
-      }
-    })
-
-    window.addEventListener('resize', () => {
-      if (hamBtn.classList.contains('on')) {
-        hamContainer.style.width = window.innerWidth > 1024 ? '100%' : '55%';
-      } else {
-        if (window.innerWidth > 1024) {
-          section02.style.display = 'block';
-        } else {
-          section02.style.display = 'none';
-        }
+        hamMenu.style.right = '-100%';
       }
     })
   }
@@ -296,13 +283,13 @@ function hamMenu() {
     }
   ]
 
-  let hamInner = hamMenuList.map(val => {
+  let hamInner = hamMenuList.map((val, idx) => {
     let subMenu = val.sub;
     let subMenuList = subMenu.map(val => {
       return `
         <li>
           <a href="#">${val}</a>
-          <figure class="web"><img src="./img/layout/pc_ham_hover_img.png" alt="ham_hover"></figure>
+          <figure><img src="https://kimsuminn.github.io/binggrae/img/layout/pc_ham_hover_img.png" alt="ham_hover"></figure>
         </li>
       `;
     }).join("");
@@ -311,7 +298,7 @@ function hamMenu() {
       <li>
         <a href="#">
           <span>${val.main}</span>
-          <figure class="mo"><img src="./img/main/m_ham_menu_btn.png" alt="mo"></figure>
+          <figure class="mo"><img src="https://kimsuminn.github.io/binggrae/img/main/m_ham_menu_btn.png" alt="mo" class='img_${idx + 1}'></figure>
         </a>
         <ul class="depth02">
           ${subMenuList}
@@ -323,14 +310,127 @@ function hamMenu() {
   depth01.innerHTML = hamInner;
   hamSection02.appendChild(depth01);
 
+  // moblie ham menu
+  function mobileHam() {
+    // ham section01
+    let section01 = document.querySelector('.hamberger_menu .ham_container .ham_sec01');
+
+    let container = document.createElement('div');
+    container.classList.add('sec01_container');
+    let ulList = document.createElement('ul');
+    let sec01_menu = ['구매포털시스템', '인재채용'];
+    let liEel = sec01_menu.map(val => {
+      return `
+        <li>
+          <a href="#">
+            <span>${val}</span>
+            <img src="https://kimsuminn.github.io/binggrae/img/main/link_arrow02.png" alt="link_arrow">
+          </a>
+        </li>
+      `;
+    }).join("");
+
+    ulList.innerHTML = liEel;
+    section01.appendChild(container);
+    container.appendChild(ulList);
+
+    // close btn
+    let closeBtn = document.createElement('button');
+    closeBtn.classList.add('ham_close');
+    closeBtn.setAttribute('type', 'button');
+    closeBtn.innerHTML = `<img src='https://kimsuminn.github.io/binggrae/img/main/ham_close.png' alt='close'>`;
+
+    container.appendChild(closeBtn);
+
+    // ham section02
+    let arrowBtn = document.querySelectorAll('.hamberger_menu .ham_container .ham_sec02 .depth01 > li');
+    let arrowImgs = document.querySelectorAll('.hamberger_menu .ham_container .ham_sec02 .depth01 > li > a img');
+    let depth02 = document.querySelectorAll('.hamberger_menu .ham_container .ham_sec02 .depth01 > li .depth02');
+    let depthList = Array.from(depth02);
+    
+    arrowBtn.forEach(val => {
+      let arrowImg = val.querySelector('.mo img');
+      let ulList = val.querySelector('.depth02');
+      let liList = ulList.querySelectorAll('li');
+      
+      val.addEventListener('click', () => {
+        arrowImg.classList.toggle('on');
+
+        arrowImgs.forEach((val2, idx) => {
+          if (val2.classList.contains('on')) {
+            if (arrowImg !== val2) {
+              val2.classList.remove('on');
+              if (depthList[idx].style.height !== '0') {
+                depthList[idx].style.height = '0';
+              }
+            }
+          }
+        })
+
+        if (arrowImg.classList.contains('on')) {
+          ulList.style.height = `${liList.length * 50}px`;
+        } else {
+          ulList.style.height = '0';
+        }
+
+      })
+    })
+
+    // ham section03
+    let section03 = document.querySelector('.hamberger_menu .ham_container .ham_sec03');
+    let lang = document.createElement('ul');
+    let aTag = document.createElement('a');
+
+    lang.classList.add('lang_2');
+    lang.innerHTML = `
+      <li class='on'><a href="/">KR</a></li>
+      <li><a href="#">EN</a></li>
+    `;
+
+    aTag.innerText = '오시는길';
+
+    section03.appendChild(lang);
+    section03.appendChild(aTag);
+  }
+
+  mobileHam();
+
   // close btn
   let closeBtn = document.querySelector('.hamberger_menu .ham_container .ham_sec01 button');
   let hamBtn = document.querySelector('.header_sec03 .right .hamberger a');
   let hamMenu = document.querySelector('.hamberger_menu');
   closeBtn.addEventListener('click', () => {
-    hamMenu.style.width = '0';
-    hamBtn.classList.toggle('on');
+    hamMenu.style.right = '-100%';
+    
+    if (hamBtn.classList.contains('on')) {
+      hamBtn.classList.remove('on');
+    }
   })
 }
 
 hamMenu();
+
+// init
+window.addEventListener('resize', () => {
+  let section02 = document.querySelector('.header_sec02');
+  let hamBtn = document.querySelector('.header_sec03 .right .hamberger a');
+  let hamMenu = document.querySelectorAll('.ham_sec02 .depth01 > li .depth02');
+  
+  if (innerWidth > 1024) {
+    section02.style.display = 'block';
+
+    if (hamBtn.classList.contains('on')) {
+      section02.style.display = 'none';
+    }
+  } else if (innerWidth <= 1024) {
+    section02.style.display = 'none';
+  }
+
+  hamMenu.forEach(val => {
+    if (innerWidth > 1024) {
+      val.style.height = 'auto';
+    } else if (innerWidth <= 1024) {
+      val.style.height = '0';
+    }
+  })
+})

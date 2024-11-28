@@ -333,7 +333,7 @@ nav.hamberger_menu {
 .ham_sec02 .depth01 > li > a {
   font-size: clamp(1.5rem, 1vw, 2.5rem);
   font-family: "Binggrae-Bold";
-  transition: .3s;
+  transition: .5s;
 }
 
 .ham_sec02 .depth01 > li:hover > a {
@@ -347,56 +347,25 @@ nav.hamberger_menu {
 }
 
 .ham_sec02 .depth01 > li .depth02 > li {
-  transition: .3s;
-}
-
-.ham_sec02 .depth01 > li .depth02 > li:not(.in_ul) {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: .5s;
 }
 
-.ham_sec02 .depth01 > li .depth02 > li:not(.in_ul) a {
+.ham_sec02 .depth01 > li .depth02 > li a {
   font-size: clamp(1rem, 1vw, 1.2rem);
   transition: .3s;
 }
 
-.ham_sec02 .depth01 > li .depth02 > li:not(.in_ul) figure {
+.ham_sec02 .depth01 > li .depth02 > li figure {
   display: none;
 }
 
-.ham_sec02 .depth01 > li .depth02 > li:not(.in_ul):hover a {
+.ham_sec02 .depth01 > li .depth02 > li:hover a {
   color: #E72F28;
 }
 
-.ham_sec02 .depth01 > li .depth02 > li:not(.in_ul):hover figure {
+.ham_sec02 .depth01 > li .depth02 > li:hover figure {
   display: block;
-}
-
-.ham_sec02 .depth01 > li .depth02 > li.in_ul div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.ham_sec02 .depth01 > li .depth02 > li.in_ul div a {
-  font-size: clamp(1rem, 1vw, 1.2rem);
-  transition: .3s;
-}
-
-.ham_sec02 .depth01 > li .depth02 > li.in_ul div figure {
-  display: none;
-}
-
-.ham_sec02 .depth01 > li .depth02 > li.in_ul:hover div a {
-  color: #E72F28;
-}
-
-.ham_sec02 .depth01 > li .depth02 > li.in_ul:hover div figure {
-  display: block;
-}
-
-.ham_sec02 .depth01 > li .depth02 > li.in_ul .depth03 {
-  font-size: clamp(0.7rem, 1vw, 1rem);
-  color: #343434cc;
 }
