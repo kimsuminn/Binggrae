@@ -61,7 +61,7 @@
   }
 
   header .header_container {
-    height: 100px;
+    height: 100px !important;
   }
 
   .header_container .header_section {
@@ -281,6 +281,7 @@
   /* main */
   .front_container main .main_container .section_01 {
     padding: 12rem 2.5rem;
+    padding-bottom: 2rem;
   }
 
   main .main_container .section_01 .logo_box img {
@@ -302,6 +303,14 @@
 
 @media screen and (max-width: 769px) {
   /* header */
+  header .header_container {
+    height: 80px !important;
+  }
+
+  .header_container .header_section {
+    height: 80px;
+  }
+
   .header_sec01 a {
     width: 120px;
     height: 30px;
@@ -325,6 +334,7 @@
   /* main */
   .front_container main .main_container .section_01 {
     padding: 10rem 1rem;
+    padding-bottom: 2rem;
   }
 
   main .main_container .section_01 .logo_box img {
@@ -352,12 +362,11 @@
   }
 
   /* slide 01 */
-  main .main_container .section_02 .slide_01 .swiper :is(.swiper-button-prev, .swiper-button-next) {
-    display: none;
-  }
-
-  main .main_container .section_02 .slide_01 .swiper .swiper-pagination {
-    display: block;
+  .sbox .swiper-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 340px 이상일 때 3개의 열 */
+    grid-auto-rows: auto;
+    gap: 4px; /* 슬라이드 간 간격 */
   }
 }
 

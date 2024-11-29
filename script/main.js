@@ -69,28 +69,29 @@ function product() {
 
   slide.innerHTML = slideAdd;
 
-
   let swiper = new Swiper(".sbox", {
     cssMode: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    mousewheel: true,
-    keyboard: true,
-    grabCursor: true,
-    slidesPerView: '6',
-    spaceBetween: 30,
     breakpoints: {
-      769: {
-        // slidesPerView: '2',
+      340: {
+        pagenation: {
+          el: ".swiper-patenation",
+          dynamicBullets: true,
+          clickable: true,
+        },
+        slidesPerView: '3',
+        spaceBetween: 10,
       },
-      1400: {
-        // slidesPerView: '3',
+      770: {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        slidesPerView: '6',
+        spaceBetween: 20,
+        autoplay: {
+          delay: 3000,
+        },
+        loop: true,
       }
     }
   });

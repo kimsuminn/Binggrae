@@ -135,7 +135,3 @@ main .main_container .section_02 .slide_01 .swiper .swiper-wrapper .swiper-slide
 main .main_container .section_02 .slide_01 .swiper :is(.swiper-button-prev, .swiper-button-next)::after {
   display: none;
 }
-
-main .main_container .section_02 .slide_01 .swiper .swiper-pagination {
-  display: none;
-}
