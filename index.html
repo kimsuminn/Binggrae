@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="./img/main/ico_favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./css/init.css">
   <link rel="stylesheet" href="./css/header.css">
   <link rel="stylesheet" href="./css/main.css">
   <link rel="stylesheet" href="./css/responsive.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
   <script src="./script/header.js" defer></script>
   <script src="./script/main.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <title>빙그레</title>
 </head>
 <body>
@@ -52,9 +52,9 @@
           <section class="section section_01">
             <div class="logo_box">
               <img src="./img/main/sec01_logo_2.png" alt="logo_2" class="main_banner web">
-              <img src="./img/main/sec01_logo_2.png" alt="logo_2" class="main_banner mo">
+              <img src="./img/main/m_sec01_logo_2.png" alt="logo_2" class="main_banner mo">
             </div>
-            <form action="#" class="search">
+            <form action="#" class="search" id="search">
               <div class="search_bar">
                 <img src="./img/main/search_icon.png" alt="search">
                 <input type="text" placeholder="제품명을 입력해 주세요">
@@ -66,20 +66,46 @@
 
           <!-- section 02 -->
           <section class="section section_02">
-            <h2>행복한 빙그레의 맛!</h2>
-            <div class="slide_01">
-              <div class="swiper sbox">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <a href="#">
-                      <figure><img src="./img/category/ice-cream.png" alt="ice-cream"></figure>
-                      <span>아이스크림</span>
-                    </a>
+            <div class="swiper sec02_slider_01">
+              <h2>행복한 빙그레의 맛!</h2>
+              <ul class="swiper-wrapper sec02_slider01_list">
+                <li class="swiper-slide">
+                  <a href="#">
+                    <img src="./img/category/ice-cream.png" alt="ice-cream">
+                    <span>아이스크림</span>
+                  </a>
+                </li>
+              </ul>
+              <div class="swiper-button-prev">
+                <img src="./img/icon/prev_arrow.png" alt="prev">
+              </div>
+              <div class="swiper-button-next">
+                <img src="./img/icon/next_arrow.png" alt="next">
+              </div>
+            </div>
+            <div class="swiper sec02_slider_02">
+              <h2>BRAND SHOP</h2>
+              <ul class="swiper-wrapper sec02_slider02_list">
+                <li class="swiper-slide">
+                  <img src="./img/main/m_sec02_logo01.png" alt="01">
+                  <div class="hover">
+                    <div class="content">
+                      <img src="./img/main/sec02_logo01.png" alt="01">
+                      <span></span>
+                      <p>
+                        빙그레 건강 tft의<br>
+                        단백질 전문 브랜드
+                      </p>
+                    </div>
+                    <button type="button">구입하기</button>
                   </div>
-                </div>
-                <div class="swiper-button-prev"><img src="./img/icon/prev_arrow.png" alt="prev"></div>
-                <div class="swiper-button-next"><img src="./img/icon/next_arrow.png" alt="next"></div>
-                <div class="swiper-pagination"></div>
+                </li>
+              </ul>
+              <div class="swiper-button-prev">
+                <img src="./img/icon/prev_arrow.png" alt="prev">
+              </div>
+              <div class="swiper-button-next">
+                <img src="./img/icon/next_arrow.png" alt="next">
               </div>
             </div>
           </section>
@@ -88,4 +114,8 @@
     </div>
   </div>
 </body>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 </html>

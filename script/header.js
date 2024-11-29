@@ -213,6 +213,7 @@ function headerContainer() {
     let section02 = document.querySelector('header .header_container .header_section .header_sec02');
     let hamBtn = document.querySelector('.header_sec03 .right .hamberger a');
     let hamMenu = document.querySelector('.hamberger_menu');
+    let body = document.querySelector('body');
 
     hamBtn.addEventListener('click', () => {
       hamBtn.classList.toggle('on');
@@ -220,11 +221,13 @@ function headerContainer() {
       if (hamBtn.classList.contains('on')) {
         section02.style.display = 'none';
         hamMenu.style.right = '0';
+        body.style.overflow = 'hidden';
       } else {
         if (innerWidth > 1024) {
           section02.style.display = 'block';
         }
         hamMenu.style.right = '-100%';
+        body.style.overflow = 'visible';
       }
     })
   }
@@ -403,8 +406,11 @@ function hamMenu() {
   let closeBtn = document.querySelector('.hamberger_menu .ham_container .ham_sec01 button');
   let hamBtn = document.querySelector('.header_sec03 .right .hamberger a');
   let hamMenu = document.querySelector('.hamberger_menu');
+  let body = document.querySelector('body');
+  
   closeBtn.addEventListener('click', () => {
     hamMenu.style.right = '-100%';
+    body.style.overflow = 'visible';
     
     if (hamBtn.classList.contains('on')) {
       hamBtn.classList.remove('on');

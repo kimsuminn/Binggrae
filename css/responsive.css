@@ -141,7 +141,7 @@
     cursor: pointer;
   }
 
-  ::-webkit-scrollbar {
+  .ham_sec02::-webkit-scrollbar {
     width: 0;
   }
 
@@ -359,14 +359,6 @@
 
   main .main_container .section_01 .item li a {
     font-size: 0.7rem;
-  }
-
-  /* slide 01 */
-  .sbox .swiper-wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 340px 이상일 때 3개의 열 */
-    grid-auto-rows: auto;
-    gap: 4px; /* 슬라이드 간 간격 */
   }
 }
 
