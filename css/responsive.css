@@ -48,7 +48,7 @@
   }
 
   .web {
-    display: none;
+    display: none !important;
   }
 
   .mo {
@@ -349,6 +349,15 @@
 
   main .main_container .section_01 .item li a {
     font-size: 0.7rem;
+  }
+
+  /* slide 01 */
+  main .main_container .section_02 .slide_01 .swiper :is(.swiper-button-prev, .swiper-button-next) {
+    display: none;
+  }
+
+  main .main_container .section_02 .slide_01 .swiper .swiper-pagination {
+    display: block;
   }
 }
 
