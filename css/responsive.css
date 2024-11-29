@@ -4,6 +4,7 @@
 }
 
 @media screen and (max-width: 1563px) {
+  /* header */
   .ham_sec02 .depth01 > li {
     padding: 1.5rem 1rem;
   }
@@ -15,9 +16,15 @@
   .ham_sec02 .depth01 > li .depth02 > li a {
     font-size: clamp(0.9rem, 1vw, 1rem);
   }
+
+  /* main */
+  main .main_container .section_01 .search {
+    width: 80%;
+  }
 }
 
 @media screen and (max-width: 1190px) {
+  /* header */
   .header_sec02 .gnb01 .depth01 > li {
     padding: 0 1rem;
   }
@@ -59,7 +66,6 @@
 
   .header_container .header_section {
     height: 100px;
-    padding: 0 1rem;
   }
 
   .header_sec01 a {
@@ -271,9 +277,31 @@
     color: #1f1f1f;
     letter-spacing: -0.1rem;
   }
+
+  /* main */
+  .front_container main .main_container .section_01 {
+    padding: 12rem 2.5rem;
+  }
+
+  main .main_container .section_01 .logo_box img {
+    width: 650px;
+  }
+
+  main .main_container .section_01 .search {
+    height: 70px;
+  }
+
+  main .main_container .section_01 .search .search_bar input {
+    height: 50px;
+  }
+
+  main .main_container .section_01 .search button {
+    height: 45px;
+  }
 }
 
 @media screen and (max-width: 769px) {
+  /* header */
   .header_sec01 a {
     width: 120px;
     height: 30px;
@@ -292,5 +320,52 @@
   .ham_sec01 .sec01_container button {
     width: 16px;
     height: 16px;
+  }
+
+  /* main */
+  .front_container main .main_container .section_01 {
+    padding: 10rem 1rem;
+  }
+
+  main .main_container .section_01 .logo_box img {
+    width: 100%;
+  }
+
+  main .main_container .section_01 .search {
+    width: 70%;
+    height: 50px;
+  }
+
+  main .main_container .section_01 .search .search_bar input {
+    height: 30px;
+    font-size: 0.9rem;
+  }
+
+  main .main_container .section_01 .search button {
+    height: 30px;
+    padding: 0 2rem;
+    font-size: 0.8rem;
+  }
+
+  main .main_container .section_01 .item li a {
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  main .main_container .section_01 .search {
+    width: 90%;
+  }
+
+  main .main_container .section_01 .search button {
+    padding: 0 1rem;
+  }
+}
+
+
+@media screen and (max-width: 360px) {
+  main .main_container .section_01 .search button {
+    flex: 1;
+    padding: 0.25rem;
   }
 }

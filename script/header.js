@@ -349,11 +349,12 @@ function hamMenu() {
     let depthList = Array.from(depth02);
     
     arrowBtn.forEach(val => {
+      let aTag = val.querySelector('.depth01 > li > a');
       let arrowImg = val.querySelector('.mo img');
       let ulList = val.querySelector('.depth02');
       let liList = ulList.querySelectorAll('li');
       
-      val.addEventListener('click', () => {
+      aTag.addEventListener('click', () => {
         arrowImg.classList.toggle('on');
 
         arrowImgs.forEach((val2, idx) => {

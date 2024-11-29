@@ -44,6 +44,6 @@ figure {
   height: fit-content;
 }
 
-button {
+input, button {
   display: block;
 }
