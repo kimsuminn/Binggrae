@@ -156,7 +156,11 @@ function headerContainer() {
       })
 
       val.addEventListener('mouseleave', () => {
-        header.style.backgroundColor = 'transparent';
+        if (scrollY > 0) {
+          header.style.backgroundColor = '#fff';
+        } else {
+          header.style.backgroundColor = 'transparent';
+        }
         header.style.borderRadius = '0';
         header.style.boxShadow = 'none';
         headerContainer.style.height = '120px';
@@ -209,7 +213,6 @@ function headerContainer() {
     let section02 = document.querySelector('header .header_container .header_section .header_sec02');
     let hamBtn = document.querySelector('.header_sec03 .right .hamberger a');
     let hamMenu = document.querySelector('.hamberger_menu');
-    let hamContainer = document.querySelector('.hamberger_menu .ham_container');
 
     hamBtn.addEventListener('click', () => {
       hamBtn.classList.toggle('on');

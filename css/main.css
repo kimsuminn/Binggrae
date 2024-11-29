@@ -1,4 +1,6 @@
 /* main.css */
+
+/* main section 01 */
 .front_container main .main_container .section_01 {
   width: 100%;
   background-image: url(../img/main/pc_section01_2.jpg);
@@ -11,6 +13,7 @@
   align-items: center;
   gap: 2rem;
   padding: 11rem 2.5rem;
+  padding-bottom: 4rem;
 }
 
 main .main_container .section_01 .logo_box {
@@ -81,4 +84,19 @@ main .main_container .section_01 .item li a {
   border-radius: 30px;
   padding: 0.8rem 1rem;
   font-size: 0.8rem;
+}
+
+/* main section 02 */
+main .main_container .section_02 {
+  width: 100%;
+  padding: 7rem 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+main .main_container .section_02 h2 {
+  font-size: 2.2rem;
+  font-family: "Binggrae-bold";
 }
