@@ -240,18 +240,56 @@ function product() {
 
 product();
 
+// section 03
+let qnaList = [
+  '빙그레 건강기능식품을 주문할 수 있는 몰이 따로 있나요?',
+  '아이스크림에는 왜 소비기한이 없나요?',
+  '제품 소비기한 뒤에 있는 알파벳 기호는 무엇인가요?',
+  '아이스크림, 음료 등 제품 공급(납품) 관련 문의드리고 싶어요.',
+  '요플레 분리배출(라벨 제거) 방법 알려주세요.',
+  '빙그레 제품을 구입할 수 있는 온라인 몰이 있나요?'
+]
+
+function counsel() {
+  let qna = document.querySelector('.section_03 .contents_box .qna .qna_list');
+  let list = qnaList.map(val => {
+    return `
+      <li>
+        <a href="#">
+          <p>Q. ${val}</p>
+          <figure>
+            <img src="https://kimsuminn.github.io/binggrae/img/main/link_arrow01.png" alt="link_arrow" class="webTab">
+            <img src="https://kimsuminn.github.io/binggrae/img/main/m_link_arrow01.png" alt="link_arrow" class="mobile">
+          </figure>
+        </a>
+      </li>
+    `;
+  }).join("");
+
+  qna.innerHTML = list;
+}
+
+counsel();
+
 // init
 window.addEventListener('resize', () => {
   let li = document.querySelectorAll('.sec02_slider_02 .swiper .swiper-wrapper .swiper-slide');
+  let sec03Img = document.querySelectorAll('.section_03 .contents_box .counsel > div');
   if (innerWidth <= 1024) {
     li.forEach((val, idx) => {
       let img = val.querySelector('.title');
       img.src = slide_item_02[idx].mimg;
     })
+
+    sec03Img[0].style.backgroundImage = 'url(https://kimsuminn.github.io/binggrae/img/main/m_sec04_backimg01.png)';
+    sec03Img[1].style.backgroundImage = 'url(https://kimsuminn.github.io/binggrae/img/main/m_sec04_backimg02.png)';
   } else if (innerWidth > 1024) {
     li.forEach((val, idx) => {
       let img = val.querySelector('.title');
       img.src = slide_item_02[idx].img;
     })
+
+    sec03Img[0].style.backgroundImage = 'url(https://kimsuminn.github.io/binggrae/img/main/sec04_backimg01.png)';
+    sec03Img[1].style.backgroundImage = 'url(https://kimsuminn.github.io/binggrae/img/main/sec04_backimg02.png)';
   }
 })

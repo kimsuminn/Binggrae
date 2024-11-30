@@ -49,6 +49,29 @@
   main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide .hover .content p {
     font-size: 0.8rem;
   }
+
+  /* main section 03 */
+  main .main_container .section_03 .contents_box .qna .qna_list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  main .main_container .section_03 .contents_box .qna .qna_title {
+    gap: 1rem;
+  }
+
+  main .main_container .section_03 .contents_box .qna .qna_list li {
+    border-radius: 20px;
+    box-shadow: inset 0 0.25rem 1rem rgba(0, 0, 0, 0.08);
+    white-space : nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  main .main_container .section_03 .contents_box .qna .qna_title button {
+    width: 140px;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -326,6 +349,53 @@
   main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide .hover .content img {
     width: 40%;
   }
+
+  /* main section 03 */
+
+  main .main_container .section_03 .contents_box .counsel > div {
+    height: 246px;
+    padding: 2rem;
+  }
+
+  main .main_container .section_03 .contents_box .counsel > div h4 {
+    font-size: 2rem;
+  }
+
+  main .main_container .section_03 .contents_box .counsel .email {
+    background-image: url(../img/main/m_sec04_backimg01.png);
+  }
+
+  main .main_container .section_03 .contents_box .counsel .email p {
+    margin-top: 0;
+  }
+
+  main .main_container .section_03 .contents_box .counsel .tel {
+    background-image: url(../img/main/m_sec04_backimg02.png);
+    gap: 0.5rem;
+  }
+
+  main .main_container .section_03 .contents_box .counsel .tel .phone {
+    font-size: 2.3rem;
+  }
+
+  main .main_container .section_03 .contents_box .qna .qna_title h4 {
+    font-size: 1.3rem;
+  }
+
+  main .main_container .section_03 .contents_box .qna .qna_list li {
+    height: 60px;
+  }
+
+  main .main_container .section_03 .contents_box .qna .qna_list li a figure {
+    margin-right: 16px;
+    box-shadow: inset 0 0 0.5rem rgba(0, 0, 0, 0.2);
+  }
+
+  main .main_container .section_03 .contents_box .qna .qna_list li:hover a figure {
+    width: 32px;
+    height: 32px;
+    margin-right: 0;
+  }
 }
 
 @media screen and (max-width: 769px) {
@@ -432,12 +502,88 @@
   }
 
   /* slide 02 */
+  main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide {
+    cursor: pointer;
+  }
+
   main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide:hover {
     box-shadow: none;
   }
 
   main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide .hover {
     display: none;
+  }
+
+  /* main section 03 */
+  main .main_container .section_03 .contents_box {
+    padding: 2rem;
+  }
+  
+  main .main_container .section_03 .contents_box .counsel {
+    flex-direction: column;
+  }
+
+  main .main_container .section_03 .contents_box .counsel > div {
+    height: 140px;
+  }
+
+  main .main_container .section_03 .contents_box .counsel > div h4 {
+    font-size: 1.4rem;
+  }
+
+  main .main_container .section_03 .contents_box .counsel .email {
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+
+  main .main_container .section_03 .contents_box .counsel .email p span {
+    display: none;
+  }
+
+  main .main_container .section_03 .contents_box .counsel .email a {
+    display: none;
+  }
+
+  main .main_container .section_03 .contents_box .counsel .tel .phone {
+    font-size: 1.4rem;
+  }
+
+  main .main_container .section_03 .contents_box .qna .qna_title h4 {
+    font-size: 1.2rem;
+  }
+
+  main .main_container .section_03 .contents_box .qna .qna_list li a {
+    gap: 1rem;
+  }
+
+  main .main_container .section_03 .contents_box .qna .qna_list li a p {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  main .main_container .section_03 .contents_box .qna .qna_list li a figure {
+    width: 24px;
+    height: 24px;
+    margin-right: 0;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  main .main_container .section_03 .contents_box .qna .qna_list li:hover a figure {
+    width: 24px;
+    height: 24px;
+  }
+
+  main .main_container .section_03 .contents_box .qna .qna_list li a figure img.webTab {
+    display: none;
+  }
+
+  main .main_container .section_03 .contents_box .qna .qna_list li a figure img.mobile {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
   }
 }
 
@@ -455,8 +601,26 @@
     padding: 4rem 0;
   }
 
-  main .main_container .section_02 .slider h2 {
+  main .main_container .section h2 {
     font-size: 1.8rem;
+  }
+
+  /* main section 03 */
+  main .main_container .section_03 .contents_box .counsel > div {
+    padding: 1.5rem;
+  }
+
+  main .main_container .section_03 .contents_box .counsel > div h4 {
+    font-size: 1.2rem;
+  }
+
+  main .main_container .section_03 .contents_box .counsel .tel .phone {
+    font-size: 1.2rem;
+  }
+
+  main .main_container .section_03 .contents_box .qna .qna_list li {
+    height: 50px;
+    border-radius: 16px;
   }
 }
 
@@ -465,5 +629,10 @@
   main .main_container .section_01 .search button {
     flex: 1;
     padding: 0.25rem;
+  }
+
+  /* main section 03 */
+  main .main_container .section_03 .contents_box {
+    padding: 1rem;
   }
 }
