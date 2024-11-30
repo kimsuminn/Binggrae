@@ -40,6 +40,15 @@
   .ham_sec02 .depth01 > li .depth02 > li a {
     font-size: 0.8rem;
   }
+
+  /* main section 02 */
+  main .main_container .section_02 .slider .swiper {
+    width: 100%;
+  }
+
+  main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide .hover .content p {
+    font-size: 0.8rem;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -299,6 +308,24 @@
   main .main_container .section_01 .search button {
     height: 45px;
   }
+
+  /* section 02 */
+  main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide {
+    width: 100%;
+    height: 100%;
+  }
+
+  main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide > img {
+    width: 100%;
+  }
+
+  main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide .hover .content {
+    gap: 1rem;
+  }
+
+  main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide .hover .content img {
+    width: 40%;
+  }
 }
 
 @media screen and (max-width: 769px) {
@@ -360,6 +387,58 @@
   main .main_container .section_01 .item li a {
     font-size: 0.7rem;
   }
+
+  /* section 02 */
+  main .main_container .section_02 {
+    gap: 4rem;
+  }
+
+  main .main_container .section_02 .slider::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0.5rem;
+    background-color: #F1F1F1;
+  }
+
+  main .main_container .section_02 .slider .swiper {
+    padding: 0 2rem;
+    padding-bottom: 4rem;
+  }
+
+  main .main_container .section_02 .slider .swiper :is(.swiper-button-prev, .swiper-button-next) {
+    display: none;
+  }
+
+  main .main_container .section_02 .slider .swiper .swiper-pagination {
+    display: block;
+    bottom: 2.5rem;
+  }
+
+  main .main_container .section_02 .slider .swiper .swiper-pagination-bullet {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: #000;
+    margin: 0 0.5rem !important;
+  }
+
+  /* silde 01 */
+  main .main_container .section_02 .slider .swiper .swiper-wrapper .swiper-slide:hover {
+    transform: translateY(0);
+  }
+
+  main .main_container .section_02 .sec02_slider_01 .swiper .swiper-wrapper .swiper-slide a span {
+    display: none;
+  }
+
+  /* slide 02 */
+  main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide:hover {
+    box-shadow: none;
+  }
+
+  main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide .hover {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 550px) {
@@ -369,6 +448,15 @@
 
   main .main_container .section_01 .search button {
     padding: 0 1rem;
+  }
+
+  /* main section 02 */
+  main .main_container .section_02 {
+    padding: 4rem 0;
+  }
+
+  main .main_container .section_02 .slider h2 {
+    font-size: 1.8rem;
   }
 }
 

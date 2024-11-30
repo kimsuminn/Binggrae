@@ -99,6 +99,22 @@ function product() {
       },
       slidesPerView: 6,
       spaceBetween: 16,
+      breakpoints: {
+        0: {
+          slidesPerView: 2,
+          spaceBetween: 10,
+          slidesPerGroup: 2,
+        },
+        500: {
+          slidesPerView: 3,
+          spaceBetween: 10,
+          slidesPerGroup: 3,
+        },
+        770: {
+          slidesPerView: 6,
+          spaceBetween: 16,
+        },
+      }
     });
   }
 
@@ -109,30 +125,37 @@ function product() {
     let slide_item_02 = [
       {
         img: 'https://kimsuminn.github.io/binggrae/img/main/sec02_logo01.png',
+        mimg: 'https://kimsuminn.github.io/binggrae/img/main/m_sec02_logo01.png',
         text: '빙그레 건강 tft의<br>단백질 전문 브랜드'
       },
       {
         img: 'https://kimsuminn.github.io/binggrae/img/main/sec02_logo02.png',
+        mimg: 'https://kimsuminn.github.io/binggrae/img/main/m_sec02_logo02.png',
         text: '부담없는 캐주얼한 커피'
       },
       {
         img: 'https://kimsuminn.github.io/binggrae/img/main/sec02_logo03.png',
+        mimg: 'https://kimsuminn.github.io/binggrae/img/main/m_sec02_logo03.png',
         text: '39년 전통의<br>대한민국 Heritage'
       },
       {
         img: 'https://kimsuminn.github.io/binggrae/img/main/sec02_logo04.png',
+        mimg: 'https://kimsuminn.github.io/binggrae/img/main/m_sec02_logo04.png',
         text: '대한민국을 대표하는<br>No.1 가공우유'
       },
       {
         img: 'https://kimsuminn.github.io/binggrae/img/main/sec02_logo05.png',
+        mimg: 'https://kimsuminn.github.io/binggrae/img/main/m_sec02_logo05.png',
         text: '진한맛의 감동<br>프리미엄 아이스크림'
       },
       {
         img: 'https://kimsuminn.github.io/binggrae/img/main/sec02_logo06.png',
+        mimg: 'https://kimsuminn.github.io/binggrae/img/main/m_sec02_logo06.png',
         text: '남자를 위한 건강플랜,<br>마노플랜'
       },
       {
         img: 'https://kimsuminn.github.io/binggrae/img/main/sec02_logo07.png',
+        mimg: 'https://kimsuminn.github.io/binggrae/img/main/m_sec02_logo07.png',
         text: '맛과 건강의 완벽한 조화,<br>비바시티'
       },
     ]
@@ -140,7 +163,7 @@ function product() {
     let slideAdd_02 = slide_item_02.map((val, idx) => {
       return `
         <li class="swiper-slide">
-          <img src=${val.img} alt=${idx + 1}>
+          <img src=${val.img} alt=${idx + 1} class="title">
           <div class="hover">
             <div class="content">
               <img src=${val.img} alt=${idx + 1}>
@@ -155,6 +178,24 @@ function product() {
   
     slide_02.innerHTML = slideAdd_02;
 
+    function imgChange() {
+      let li = slide_02.querySelectorAll('.swiper-slide');
+
+      if (innerWidth <= 1024) {
+        li.forEach((val, idx) => {
+          let img = val.querySelector('.title');
+          img.src = slide_item_02[idx].mimg;
+        })
+      } else {
+        li.forEach((val, idx) => {
+          let img = val.querySelector('.title');
+          img.src = slide_item_02[idx].img;
+        })
+      }
+    }
+
+    imgChange();
+
     let swiper_2 = new Swiper(".swiper_02", {
       cssMode: true,
       navigation: {
@@ -165,8 +206,30 @@ function product() {
         el: ".swiper-pagination",
         clickable: true,
       },
-      slidesPerView: 6,
-      spaceBetween: 16,
+      breakpoints: {
+        0: {
+          slidesPerView: 2,
+          spaceBetween: 10,
+          slidesPerGroup: 2,
+        },
+        500: {
+          slidesPerView: 3,
+          spaceBetween: 10,
+          slidesPerGroup: 3,
+        },
+        770: {
+          slidesPerView: 4,
+          spaceBetween: 16,
+        },
+        1024: {
+          slidesPerView: 5,
+          spaceBetween: 16,
+        },
+        1300: {
+          slidesPerView: 6,
+          spaceBetween: 16,
+        },
+      }
     });
   }
 
