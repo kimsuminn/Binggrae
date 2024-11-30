@@ -290,7 +290,8 @@ nav.hamberger_menu {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  transition: .5s;
+  opacity: 0;
+  transition: .8s;
 }
 
 .ham_sec01, .ham_sec03 {
