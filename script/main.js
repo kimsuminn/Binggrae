@@ -60,7 +60,7 @@ function product() {
     let slideAdd_01 = slide_item_01.map((val, idx) => {
       return `
         <li class="swiper-slide">
-          <a href="#">
+          <a>
             <figure><img src=${val.img} alt=${idx + 1}></figure>
             <span>${val.item}</span>
           </a>
@@ -87,14 +87,18 @@ function product() {
       })
     })
   
-    const swiper_1 = new Swiper(".sec02_slider_01", {
+    let swiper_1 = new Swiper(".swiper_01", {
       cssMode: true,
-      slidesPerView: 6,
-      spaceBetween: 16,
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      slidesPerView: 6,
+      spaceBetween: 16,
     });
   }
 
@@ -151,14 +155,18 @@ function product() {
   
     slide_02.innerHTML = slideAdd_02;
 
-    const swiper_2 = new Swiper(".sec02_slider_02", {
+    let swiper_2 = new Swiper(".swiper_02", {
       cssMode: true,
-      slidesPerView: 6,
-      spaceBetween: 16,
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      slidesPerView: 6,
+      spaceBetween: 16,
     });
   }
 

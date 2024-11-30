@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="./css/header.css">
   <link rel="stylesheet" href="./css/main.css">
   <link rel="stylesheet" href="./css/responsive.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
   <script src="./script/header.js" defer></script>
@@ -66,46 +67,44 @@
 
           <!-- section 02 -->
           <section class="section section_02">
-            <div class="swiper sec02_slider_01">
+            <div class="slider sec02_slider_01">
               <h2>행복한 빙그레의 맛!</h2>
-              <ul class="swiper-wrapper sec02_slider01_list">
-                <li class="swiper-slide">
-                  <a href="#">
-                    <img src="./img/category/ice-cream.png" alt="ice-cream">
-                    <span>아이스크림</span>
-                  </a>
-                </li>
-              </ul>
-              <div class="swiper-button-prev">
-                <img src="./img/icon/prev_arrow.png" alt="prev">
-              </div>
-              <div class="swiper-button-next">
-                <img src="./img/icon/next_arrow.png" alt="next">
+              <div class="swiper swiper_01">
+                <ul class="swiper-wrapper">
+                  <li class="swiper-slide">
+                    <a href="#">
+                      <img src="./img/category/ice-cream.png" alt="ice-cream">
+                      <span>아이스크림</span>
+                    </a>
+                  </li>
+                </ul>
+                <div class="swiper-button-next"><img src="./img/icon/next_arrow.png" alt="next"></div>
+                <div class="swiper-button-prev"><img src="./img/icon/prev_arrow.png" alt="prev"></div>
+                <div class="swiper-pagination"></div>
               </div>
             </div>
-            <div class="swiper sec02_slider_02">
+            <div class="slider sec02_slider_02">
               <h2>BRAND SHOP</h2>
-              <ul class="swiper-wrapper sec02_slider02_list">
-                <li class="swiper-slide">
-                  <img src="./img/main/m_sec02_logo01.png" alt="01">
-                  <div class="hover">
-                    <div class="content">
-                      <img src="./img/main/sec02_logo01.png" alt="01">
-                      <span></span>
-                      <p>
-                        빙그레 건강 tft의<br>
-                        단백질 전문 브랜드
-                      </p>
+              <div class="swiper swiper_02">
+                <ul class="swiper-wrapper">
+                  <li class="swiper-slide">
+                    <img src="./img/main/m_sec02_logo01.png" alt="01">
+                    <div class="hover">
+                      <div class="content">
+                        <img src="./img/main/sec02_logo01.png" alt="01">
+                        <span></span>
+                        <p>
+                          빙그레 건강 tft의<br>
+                          단백질 전문 브랜드
+                        </p>
+                      </div>
+                      <button type="button">구입하기</button>
                     </div>
-                    <button type="button">구입하기</button>
-                  </div>
-                </li>
-              </ul>
-              <div class="swiper-button-prev">
-                <img src="./img/icon/prev_arrow.png" alt="prev">
-              </div>
-              <div class="swiper-button-next">
-                <img src="./img/icon/next_arrow.png" alt="next">
+                  </li>
+                </ul>
+                <div class="swiper-button-next"><img src="./img/icon/next_arrow.png" alt="next"></div>
+                <div class="swiper-button-prev"><img src="./img/icon/prev_arrow.png" alt="prev"></div>
+                <div class="swiper-pagination"></div>
               </div>
             </div>
           </section>
