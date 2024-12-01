@@ -447,3 +447,52 @@ main .main_container .section_03 .contents_box .qna .qna_list li:hover a figure 
   height: 44px;
   margin-right: 0;
 }
+
+/* main section 04 */
+main .main_container .section_04 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 6rem 2rem;
+  padding-bottom: 8rem;
+}
+
+main .main_container .section_04 .allbox {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+}
+
+main .main_container .section_04 .allbox .box {
+  flex: 1;
+  height: 240px;
+  background-color: #F9F9F9;
+  border-radius: 30px;
+  box-shadow: inset 0 4px 2rem rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3.8rem 0;
+  text-align: center;
+  font-size: clamp(1.1rem, 1vw, 1.25rem);
+  letter-spacing: -0.1rem;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+main .main_container .section_04 .allbox .box button {
+  width: 160px;
+  border: none;
+  border-radius: 30px;
+  background-color: #E73229;
+  color: #fff;
+  padding: 0.6rem 2rem;
+  font-weight: 600;
+  font-size: clamp(0.8rem, 1vw, 0.9rem);
+  letter-spacing: -0.1rem;
+  cursor: pointer;
+}

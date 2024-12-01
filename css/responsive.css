@@ -396,6 +396,17 @@
     height: 32px;
     margin-right: 0;
   }
+
+  /* main section 04 */
+  main .main_container .section_04 .allbox {
+    flex-direction: column;
+  }
+
+  main .main_container .section_04 .allbox .box {
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 3.8rem 2rem;
+  }
 }
 
 @media screen and (max-width: 769px) {
