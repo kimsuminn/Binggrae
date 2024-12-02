@@ -177,13 +177,14 @@ function headerContainer() {
       val.addEventListener('mouseleave', () => {
         if (scrollY > 0) {
           header.classList.add('on');
+          headerSection.style.borderBottom = '1px solid #e7e7e7';
         } else {
           header.classList.remove('on');
+          headerSection.style.borderBottom = '1px solid transparent';
         }
         header.style.borderRadius = '0';
         header.style.boxShadow = 'none';
         headerContainer.style.height = '120px';
-        headerSection.style.borderBottom = '1px solid transparent';
         subMenuOpacity(0);
         gnb.classList.remove('visible');
       })
