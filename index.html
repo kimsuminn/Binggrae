@@ -45,6 +45,26 @@
           <div class="ham_sec03"></div>
         </div>
       </nav>
+
+      <!-- top bottom btn -->
+      <aside>
+        <div class="chat">
+          <a class="help"><img src="./img/layout/chat_img.png" alt="chat"></a>
+          <div class="text_box">
+            <p>무엇을 도와드릴까요?</p>
+          </div>
+          <!-- <div class="chat_box">
+            <div class="chat_sec01">
+            </div>
+            <div class="chat_sec02">
+              <div class="menu_container">
+              </div>
+            </div>
+          </div> -->
+        </div>
+        <a href="https://brand.naver.com/binggrae" class="shop" target="_blank">SHOP</a>
+        <a class="top"><img src="./img/layout/fix_arrow.png" alt="arrow"></a>
+      </aside>
     </div>
     
     <div class="front_container">
@@ -89,7 +109,7 @@
           </section>
 
           <!-- section 03 -->
-          <section class="section section_03" data-aos="fade-up" data-aos-duration="2000">
+          <section class="section section_03" data-aos="fade-up" data-aos-duration="1000">
             <h2>고객문의 및 불편사항</h2>
             <div class="contents_box">
               <div class="counsel">
@@ -130,17 +150,17 @@
           </section>
 
           <!-- section 04 -->
-           <section class="section section_04" data-aos="fade-up" data-aos-duration="2000">
+           <section class="section section_04" data-aos="fade-up" data-aos-duration="1000">
             <h2>빙그레 임직원 및 종사자 온라인 제보</h2>
-            <div class="allbox">
-              <div class="box box_1" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+            <div class="allbox" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+              <div class="box box_1">
                 <p>
                   빙그레 임직원의 부당한 요구 또는 업무처리,<br>
                   인권고충, 기타 부정행위 제보
                 </p>
                 <button type="button">사이버 신고센터</button>
               </div>
-              <div class="box box_2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+              <div class="box box_2">
                 <p>빙그레 종사자의 유해·위험요소 및 안전·보건에 관한 의견 제보</p>
                 <button type="button">안전신문고</button>
               </div>
@@ -189,6 +209,8 @@
 </body>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
-  AOS.init();
+  AOS.init({
+    once: true,
+  });
 </script>
 </html>

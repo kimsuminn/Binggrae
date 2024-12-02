@@ -152,6 +152,7 @@ function product() {
         770: {
           slidesPerView: 6,
           spaceBetween: 16,
+          slidesPerGroup: 1,
         },
       }
     });
@@ -222,6 +223,7 @@ function product() {
         770: {
           slidesPerView: 4,
           spaceBetween: 16,
+          slidesPerGroup: 1,
         },
         1024: {
           slidesPerView: 5,

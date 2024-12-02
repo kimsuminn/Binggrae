@@ -29,6 +29,10 @@
     padding: 0 1rem;
   }
 
+  .header_sec02 .gnb01 .depth01 > li > .depth02 > li > a {
+    font-size: 0.9rem;
+  }
+
   .ham_sec02 .depth01 > li {
     padding: 1.5rem 1rem;
   }
@@ -398,10 +402,6 @@
   }
 
   /* main section 04 */
-  main .main_container .section_04 .allbox {
-    flex-direction: column;
-  }
-
   main .main_container .section_04 .allbox .box {
     justify-content: center;
     gap: 1.5rem;
@@ -450,6 +450,25 @@
   .ham_sec01 .sec01_container button {
     width: 16px;
     height: 16px;
+  }
+
+  /* top btn */
+  aside .chat {
+    margin-bottom: 1rem;
+  }
+
+  aside .chat a {
+    width: 48px;
+    height: 48px;
+  }
+
+  aside > a {
+    width: 48px;
+    height: 48px;
+  }
+
+  aside > a.shop {
+    font-size: 0.8rem
   }
 
   /* main */
@@ -608,6 +627,11 @@
     width: 50%;
     display: block;
     margin: 0 auto;
+  }
+
+  /* main section 04 */
+  main .main_container .section_04 .allbox {
+    flex-direction: column;
   }
 
   /* footer */
