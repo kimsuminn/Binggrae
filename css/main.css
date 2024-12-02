@@ -152,8 +152,12 @@ main .main_container .section_02 .sec02_slider_01 .swiper .swiper-wrapper .swipe
 main .main_container .section_02 .slider .swiper :is(.swiper-button-prev, .swiper-button-next) {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(calc(-50% + 1rem));
   cursor: pointer;
+}
+
+main .main_container .section_02 .slider .swiper.swiper_02 :is(.swiper-button-prev, .swiper-button-next) {
+  transform: translateY(calc(-50% + 2rem));
 }
 
 main .main_container .section_02 .slider .swiper :is(.swiper-button-prev, .swiper-button-next)::after {
