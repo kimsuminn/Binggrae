@@ -5,7 +5,7 @@ function searchItem() {
 
   let addItem = items.map(val => {
     return `
-      <li><a href="#">#${val}</a></li>
+      <li><a>#${val}</a></li>
     `;
   }).join("");
 
@@ -257,7 +257,7 @@ function counsel() {
   let list = qnaList.map(val => {
     return `
       <li>
-        <a href="#">
+        <a>
           <p>Q. ${val}</p>
           <figure>
             <img src="https://kimsuminn.github.io/binggrae/img/main/link_arrow01.png" alt="link_arrow" class="webTab">

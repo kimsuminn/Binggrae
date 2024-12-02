@@ -132,13 +132,13 @@ function headerContainer() {
       } else {
         let subList = sub.map(val2 => {
           return `
-            <li><a href="#">${val2}</a></li>
+            <li><a>${val2}</a></li>
           `;
         }).join("");
 
         return `
         <li>
-          <a href="#">${val.title}</a>
+          <a>${val.title}</a>
           <ul class="depth02">
             ${subList}
           </ul>
@@ -204,7 +204,7 @@ function headerContainer() {
         </p>
         <ul>
           <li><a href="/binggrae/">KR</a></li>
-          <li><a href="#">EN</a></li>
+          <li><a>EN</a></li>
         </ul>
       </div>
     `;
@@ -223,7 +223,7 @@ function headerContainer() {
     section03.appendChild(ham);
 
     ham.innerHTML = `
-      <a href="#">
+      <a>
         <span></span>
         <span></span>
         <span></span>
@@ -321,7 +321,7 @@ function hamMenu() {
     let subMenuList = subMenu.map(val => {
       return `
         <li>
-          <a href="#">${val}</a>
+          <a>${val}</a>
           <figure><img src="https://kimsuminn.github.io/binggrae/img/layout/pc_ham_hover_img.png" alt="ham_hover"></figure>
         </li>
       `;
@@ -329,7 +329,7 @@ function hamMenu() {
 
     return `
       <li>
-        <a href="#">
+        <a>
           <span>${val.main}</span>
           <figure class="mo"><img src="https://kimsuminn.github.io/binggrae/img/main/m_ham_menu_btn.png" alt="mo" class='img_${idx + 1}'></figure>
         </a>
@@ -355,7 +355,7 @@ function hamMenu() {
     let liEel = sec01_menu.map(val => {
       return `
         <li>
-          <a href="#">
+          <a>
             <span>${val}</span>
             <img src="https://kimsuminn.github.io/binggrae/img/main/link_arrow02.png" alt="link_arrow">
           </a>
@@ -418,7 +418,7 @@ function hamMenu() {
     lang.classList.add('lang_2');
     lang.innerHTML = `
       <li class='on'><a href="/binggrae/">KR</a></li>
-      <li><a href="#">EN</a></li>
+      <li><a>EN</a></li>
     `;
 
     aTag.innerText = '오시는길';
