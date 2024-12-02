@@ -113,13 +113,30 @@ function headerContainer() {
     let menuList = menu.map(val => {
 
       let sub = val.subMenu;
-      let subList = sub.map(val2 => {
-        return `
-          <li><a href="#">${val2}</a></li>
-        `;
-      }).join("");
 
-      return `
+      if (val.title === '제품소개') {
+        let subList = sub.map(val2 => {
+          return `
+            <li><a href="/binggrae/product.html">${val2}</a></li>
+          `;
+        }).join("");
+
+        return `
+          <li>
+            <a href="/binggrae/product.html">${val.title}</a>
+            <ul class="depth02">
+              ${subList}
+            </ul>
+          </li>
+        `;
+      } else {
+        let subList = sub.map(val2 => {
+          return `
+            <li><a href="#">${val2}</a></li>
+          `;
+        }).join("");
+
+        return `
         <li>
           <a href="#">${val.title}</a>
           <ul class="depth02">
@@ -127,6 +144,7 @@ function headerContainer() {
           </ul>
         </li>
       `;
+      }
     }).join("");
 
     ul.innerHTML = menuList;

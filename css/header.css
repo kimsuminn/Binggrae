@@ -178,6 +178,10 @@ header .header_container.on {
   color: #E72F28;
 }
 
+.header_sec02 .gnb01 .depth01 > li > .depth02 > li > a.on {
+  color: #E72F28;
+}
+
 /* lang */
 .header_sec03 {
   height: 100%;
@@ -278,6 +282,7 @@ nav.hamberger_menu {
   top: 0;
   right: -100%;
   background-color: #fff;
+  z-index: 9997;
 }
 
 .black_bg {
@@ -346,6 +351,10 @@ nav.hamberger_menu {
   color: #E72F28;
 }
 
+.ham_sec02 .depth01 > li > a.on {
+  color: #E72F28;
+}
+
 .ham_sec02 .depth01 > li .depth02 {
   display: flex;
   flex-direction: column;
@@ -369,6 +378,10 @@ nav.hamberger_menu {
 }
 
 .ham_sec02 .depth01 > li .depth02 > li:hover a {
+  color: #E72F28;
+}
+
+.ham_sec02 .depth01 > li .depth02 > li:hover a.on {
   color: #E72F28;
 }
 
