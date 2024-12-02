@@ -132,13 +132,13 @@ function headerContainer() {
       } else {
         let subList = sub.map(val2 => {
           return `
-            <li><a>${val2}</a></li>
+            <li><a href="#">${val2}</a></li>
           `;
         }).join("");
 
         return `
         <li>
-          <a>${val.title}</a>
+          <a href="#">${val.title}</a>
           <ul class="depth02">
             ${subList}
           </ul>
@@ -204,7 +204,7 @@ function headerContainer() {
         </p>
         <ul>
           <li><a href="/binggrae/">KR</a></li>
-          <li><a>EN</a></li>
+          <li><a href="#">EN</a></li>
         </ul>
       </div>
     `;
@@ -223,7 +223,7 @@ function headerContainer() {
     section03.appendChild(ham);
 
     ham.innerHTML = `
-      <a>
+      <a href="#">
         <span></span>
         <span></span>
         <span></span>
@@ -236,7 +236,8 @@ function headerContainer() {
     let hamContainer = document.querySelector('.hamberger_menu .ham_container');
     let body = document.querySelector('body');
 
-    hamBtn.addEventListener('click', () => {
+    hamBtn.addEventListener('click', (e) => {
+      e.preventDefault();
       hamBtn.classList.toggle('on');
 
       if (hamBtn.classList.contains('on')) {
@@ -318,26 +319,50 @@ function hamMenu() {
 
   let hamInner = hamMenuList.map((val, idx) => {
     let subMenu = val.sub;
-    let subMenuList = subMenu.map(val => {
+
+    if (val.main === '제품소개') {
+      let subMenuList = subMenu.map(val => {
+        return `
+          <li>
+            <a href="https://kimsuminn.github.io/binggrae/product.html">${val}</a>
+            <figure><img src="https://kimsuminn.github.io/binggrae/img/layout/pc_ham_hover_img.png" alt="ham_hover"></figure>
+          </li>
+        `;
+      }).join("");
+
       return `
         <li>
-          <a>${val}</a>
-          <figure><img src="https://kimsuminn.github.io/binggrae/img/layout/pc_ham_hover_img.png" alt="ham_hover"></figure>
+          <a href="https://kimsuminn.github.io/binggrae/product.html">
+            <span>${val.main}</span>
+            <figure class="mo"><img src="https://kimsuminn.github.io/binggrae/img/main/m_ham_menu_btn.png" alt="mo" class='img_${idx + 1}'></figure>
+          </a>
+          <ul class="depth02">
+            ${subMenuList}
+          </ul>
         </li>
       `;
-    }).join("");
+    } else {
+      let subMenuList = subMenu.map(val => {
+        return `
+          <li>
+            <a href="#">${val}</a>
+            <figure><img src="https://kimsuminn.github.io/binggrae/img/layout/pc_ham_hover_img.png" alt="ham_hover"></figure>
+          </li>
+        `;
+      }).join("");
 
-    return `
-      <li>
-        <a>
-          <span>${val.main}</span>
-          <figure class="mo"><img src="https://kimsuminn.github.io/binggrae/img/main/m_ham_menu_btn.png" alt="mo" class='img_${idx + 1}'></figure>
-        </a>
-        <ul class="depth02">
-          ${subMenuList}
-        </ul>
-      </li>
-    `;
+      return `
+        <li>
+          <a href="#">
+            <span>${val.main}</span>
+            <figure class="mo"><img src="https://kimsuminn.github.io/binggrae/img/main/m_ham_menu_btn.png" alt="mo" class='img_${idx + 1}'></figure>
+          </a>
+          <ul class="depth02">
+            ${subMenuList}
+          </ul>
+        </li>
+      `;
+    }
   }).join("");
 
   depth01.innerHTML = hamInner;
@@ -355,7 +380,7 @@ function hamMenu() {
     let liEel = sec01_menu.map(val => {
       return `
         <li>
-          <a>
+          <a href="#">
             <span>${val}</span>
             <img src="https://kimsuminn.github.io/binggrae/img/main/link_arrow02.png" alt="link_arrow">
           </a>
@@ -418,7 +443,7 @@ function hamMenu() {
     lang.classList.add('lang_2');
     lang.innerHTML = `
       <li class='on'><a href="/binggrae/">KR</a></li>
-      <li><a>EN</a></li>
+      <li><a href="/binggrae/">EN</a></li>
     `;
 
     aTag.innerText = '오시는길';

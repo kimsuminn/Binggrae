@@ -5,7 +5,7 @@ function searchItem() {
 
   let addItem = items.map(val => {
     return `
-      <li><a>#${val}</a></li>
+      <li><a href="#">#${val}</a></li>
     `;
   }).join("");
 
@@ -99,7 +99,7 @@ function product() {
     let slideAdd_01 = slide_item_01.map((val, idx) => {
       return `
         <li class="swiper-slide" data-aos="fade-in" data-aos-duration="${(idx + 1) * 1000}" data-aos-delay="${idx * 3000}">
-          <a>
+          <a href="#">
             <figure><img src=${val.img} alt=${idx + 1}></figure>
             <span>${val.item}</span>
           </a>
@@ -257,7 +257,7 @@ function counsel() {
   let list = qnaList.map(val => {
     return `
       <li>
-        <a>
+        <a href="#">
           <p>Q. ${val}</p>
           <figure>
             <img src="https://kimsuminn.github.io/binggrae/img/main/link_arrow01.png" alt="link_arrow" class="webTab">
