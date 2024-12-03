@@ -491,22 +491,14 @@ function help() {
   // chat box
   let chatBox = document.querySelector('.chat_box');
 
-  chatBtn.addEventListener('click', () => {
+  chatBtn.addEventListener('click', (e) => {
+    e.preventDefault();
     chatBox.classList.toggle('click');
-    
-    if (chatBox.classList.contains('click')) {
-      chatBox.style.display = 'block';
-      chatBox.style.opacity = '1';
-    } else {
-      chatBox.style.display = 'none';
-      chatBox.style.opacity = '0';
-    }
   })
 
   let closeChat = document.querySelector('.chat_box .chat_inner .chat_sec01 figure');
   closeChat.addEventListener('click', () => {
     chatBox.classList.remove('click');
-    chatBox.style.display = 'none';
   })
 
   // chat sec02
@@ -517,12 +509,23 @@ function help() {
   
   clickMenu.addEventListener('click', () => {
     chatMenu.style.boxShadow = 'none';
-    showMenu.style.height = '396px';
+    showMenu.style.height = '408px';
   })
 
   closeMenu.addEventListener('click', () => {
     chatMenu.style.boxShadow = '0 0.5rem 1rem rgba(0, 0, 0, 0.2)';
     showMenu.style.height = '0';
+  })
+
+  // chat box close
+  document.addEventListener('click', (e) => {
+    if (chatBox.contains(e.target) || chatBtn.contains(e.target)) {
+      return;
+    }
+
+    if (chatBox.classList.contains("click")) {
+      chatBox.classList.remove("click");
+    }
   })
 }
 
