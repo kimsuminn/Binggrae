@@ -490,17 +490,16 @@ function help() {
 
   // chat box
   let chatBox = document.querySelector('.chat_box');
-  let chatInner = document.querySelector('.chat_box .chat_inner');
 
   chatBtn.addEventListener('click', () => {
     chatBox.classList.toggle('click');
     
     if (chatBox.classList.contains('click')) {
       chatBox.style.display = 'block';
-      chatInner.style.opacity = '1';
+      chatBox.style.opacity = '1';
     } else {
       chatBox.style.display = 'none';
-      chatInner.style.opacity = '0';
+      chatBox.style.opacity = '0';
     }
   })
 
@@ -508,7 +507,6 @@ function help() {
   closeChat.addEventListener('click', () => {
     chatBox.classList.remove('click');
     chatBox.style.display = 'none';
-    chatInner.style.opacity = '0';
   })
 
   // chat sec02
@@ -519,7 +517,7 @@ function help() {
   
   clickMenu.addEventListener('click', () => {
     chatMenu.style.boxShadow = 'none';
-    showMenu.style.height = '425px';
+    showMenu.style.height = '396px';
   })
 
   closeMenu.addEventListener('click', () => {

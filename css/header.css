@@ -485,10 +485,13 @@ aside .chat .help:hover img {
   right: 8rem;
   z-index: 9999;
   display: none;
+  opacity: 0;
+  transition: .3s;
 }
 
 .chat_box.click {
   display: block;
+  opacity: 1;
 }
 
 .chat_box .chat_inner {
@@ -497,12 +500,6 @@ aside .chat .help:hover img {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  opacity: 0;
-  transition: .3s;
-}
-
-.chat_box.click .chat_inner {
-  opacity: 1;
 }
 
 .chat_box .chat_inner .chat_sec01 {
@@ -541,9 +538,9 @@ aside .chat .help:hover img {
   background-color: #ECECEC;
   display: flex;
   flex-direction: column;
-  transition: .3s;
   position: relative;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  transition: .3s;
 }
 
 .chat_box .chat_inner .chat_sec02 .menu .title {
