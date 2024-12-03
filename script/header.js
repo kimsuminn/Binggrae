@@ -527,12 +527,12 @@ function help() {
 
   chatBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    chatBox.classList.toggle('click');
+    chatBox.classList.toggle('open');
   })
 
   let closeChat = document.querySelector('.chat_box .chat_inner .chat_sec01 figure');
   closeChat.addEventListener('click', () => {
-    chatBox.classList.remove('click');
+    chatBox.classList.remove('open');
   })
 
   // chat sec02
@@ -557,8 +557,8 @@ function help() {
       return;
     }
 
-    if (chatBox.classList.contains("click")) {
-      chatBox.classList.remove("click");
+    if (chatBox.classList.contains("open")) {
+      chatBox.classList.remove("open");
     }
   })
 }

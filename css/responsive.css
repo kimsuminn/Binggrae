@@ -510,6 +510,10 @@
   }
 
   /* section 02 */
+  main .main_container .section h2 {
+    font-size: 1.8rem;
+  }
+
   main .main_container .section_02 {
     gap: 4rem;
   }
@@ -707,6 +711,12 @@
 @media screen and (max-width: 550px) {
   main .main_container .section_01 .search {
     width: 90%;
+    min-width: 300px;
+    height: 40px;
+  }
+
+  main .main_container .section_01 .search .search_bar {
+    padding: 0;
   }
 
   main .main_container .section_01 .search button {
@@ -719,7 +729,7 @@
   }
 
   main .main_container .section h2 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
   /* main section 03 */
@@ -759,11 +769,6 @@
 
 
 @media screen and (max-width: 360px) {
-  main .main_container .section_01 .search button {
-    flex: 1;
-    padding: 0.25rem;
-  }
-
   /* main section 03 */
   main .main_container .section_03 .contents_box {
     padding: 1rem;

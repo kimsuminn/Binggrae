@@ -273,7 +273,38 @@ function counsel() {
 
 counsel();
 
-// init
+// scroll event
+function scrollEvent() {
+  let slide_01 = document.querySelector('main .main_container .section_02 .slider .swiper_01 .swiper-wrapper');
+  let slide_02 = document.querySelector('main .main_container .section_02 .slider .swiper_02 .swiper-wrapper');
+  let counsel = document.querySelector('main .main_container .section_03 .contents_box .counsel');
+  let qna = document.querySelector('main .main_container .section_03 .contents_box .qna');
+  let box = document.querySelector('main .main_container .section_04 .allbox');
+  
+  function onScroll(el) {
+    let elTop = el.getBoundingClientRect().top;
+    let windowHeight = window.innerHeight;
+
+    if (elTop < windowHeight) {
+      el.classList.add('visible');
+    } else {
+      el.classList.remove('visible');
+    }
+  }
+
+  window.addEventListener('scroll', () => {
+    onScroll(slide_01);
+    onScroll(slide_02);
+    onScroll(counsel);
+    onScroll(qna);
+    onScroll(box);
+  });
+
+}
+
+scrollEvent();
+
+// resize
 window.addEventListener('resize', () => {
   let li = document.querySelectorAll('.sec02_slider_02 .swiper .swiper-wrapper .swiper-slide');
   let sec03Img = document.querySelectorAll('.section_03 .contents_box .counsel > div');
@@ -293,5 +324,12 @@ window.addEventListener('resize', () => {
 
     sec03Img[0].style.backgroundImage = 'url(https://kimsuminn.github.io/binggrae/img/main/sec04_backimg01.png)';
     sec03Img[1].style.backgroundImage = 'url(https://kimsuminn.github.io/binggrae/img/main/sec04_backimg02.png)';
+  }
+
+  let sectionTitle = document.querySelector('.section_04 h2');
+  if (innerWidth <= 440) {
+    sectionTitle.innerHTML = '빙그레 임직원 및 종사자<br>온라인 제보';
+  } else if (innerWidth > 440) {
+    sectionTitle.innerHTML = '빙그레 임직원 및 종사자 온라인 제보';
   }
 })

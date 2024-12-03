@@ -489,7 +489,7 @@ aside .chat .help:hover img {
   transition: .3s;
 }
 
-.chat_box.click {
+.chat_box.open {
   display: block;
   opacity: 1;
 }

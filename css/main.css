@@ -1,5 +1,10 @@
 /* main.css */
 
+.visible {
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+}
+
 /* main section 01 */
 .front_container main .main_container .section_01 {
   width: 100%;
@@ -122,11 +127,14 @@ main .main_container .section_02 .slider .swiper .swiper-wrapper {
   width: 100%;
   padding: 2rem 0;
   display: flex;
+  transform: translateY(2rem);
+  opacity: 0;
+  transition: .8s;
 }
 
 main .main_container .section_02 .slider .swiper .swiper-wrapper .swiper-slide {
   flex-shrink: 0;
-  transition: .5s;
+  transition: .8s;
 }
 
 main .main_container .section_02 .slider .swiper .swiper-wrapper .swiper-slide:hover {
@@ -290,6 +298,9 @@ main .main_container .section_03 .contents_box {
 main .main_container .section_03 .contents_box .counsel {
   display: flex;
   gap: 2rem;
+  transition: .8s;
+  transform: translateY(2rem);
+  opacity: 0;
 }
 
 main .main_container .section_03 .contents_box .counsel > div {
@@ -364,6 +375,9 @@ main .main_container .section_03 .contents_box .qna {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  transition: .8s;
+  transform: translateY(2rem);
+  opacity: 0;
 }
 
 main .main_container .section_03 .contents_box .qna .qna_title {
@@ -468,6 +482,9 @@ main .main_container .section_04 .allbox {
   margin: 0 auto;
   display: flex;
   gap: 2rem;
+  transition: .8s;
+  transform: translateY(2rem);
+  opacity: 0;
 }
 
 main .main_container .section_04 .allbox .box {
