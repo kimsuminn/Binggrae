@@ -98,7 +98,7 @@ function product() {
   
     let slideAdd_01 = slide_item_01.map((val, idx) => {
       return `
-        <li class="swiper-slide" data-aos="fade-in" data-aos-duration="${(idx + 1) * 1000}" data-aos-delay="${idx * 3000}">
+        <li class="swiper-slide">
           <a href="#">
             <figure><img src=${val.img} alt=${idx + 1}></figure>
             <span>${val.item}</span>
@@ -165,7 +165,7 @@ function product() {
   
     let slideAdd_02 = slide_item_02.map((val, idx) => {
       return `
-        <li class="swiper-slide" data-aos="fade-in" data-aos-duration="${(idx + 1) * 1000}" data-aos-delay="${idx * 3000}">
+        <li class="swiper-slide">
           <img src=${val.img} alt=${idx + 1} class="title">
           <div class="hover">
             <div class="content">

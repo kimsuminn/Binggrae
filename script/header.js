@@ -487,6 +487,45 @@ function help() {
   chatBtn.addEventListener('mouseleave', () => {
     textBox.style.display = 'none';
   })
+
+  // chat box
+  let chatBox = document.querySelector('.chat_box');
+  let chatInner = document.querySelector('.chat_box .chat_inner');
+
+  chatBtn.addEventListener('click', () => {
+    chatBox.classList.toggle('click');
+    
+    if (chatBox.classList.contains('click')) {
+      chatBox.style.display = 'block';
+      chatInner.style.opacity = '1';
+    } else {
+      chatBox.style.display = 'none';
+      chatInner.style.opacity = '0';
+    }
+  })
+
+  let closeChat = document.querySelector('.chat_box .chat_inner .chat_sec01 figure');
+  closeChat.addEventListener('click', () => {
+    chatBox.classList.remove('click');
+    chatBox.style.display = 'none';
+    chatInner.style.opacity = '0';
+  })
+
+  // chat sec02
+  let chatMenu = document.querySelector('.chat_box .chat_inner .chat_sec02 .menu');
+  let clickMenu = chatMenu.querySelector('.menu .title');
+  let showMenu = chatMenu.querySelector('.menu .menu_container');
+  let closeMenu = chatMenu.querySelector('.menu .menu_container .menu_wrap button');
+  
+  clickMenu.addEventListener('click', () => {
+    chatMenu.style.boxShadow = 'none';
+    showMenu.style.height = '425px';
+  })
+
+  closeMenu.addEventListener('click', () => {
+    chatMenu.style.boxShadow = '0 0.5rem 1rem rgba(0, 0, 0, 0.2)';
+    showMenu.style.height = '0';
+  })
 }
 
 help();

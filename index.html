@@ -53,18 +53,89 @@
           <div class="text_box">
             <p>무엇을 도와드릴까요?</p>
           </div>
-          <!-- <div class="chat_box">
-            <div class="chat_sec01">
-            </div>
-            <div class="chat_sec02">
-              <div class="menu_container">
-              </div>
-            </div>
-          </div> -->
         </div>
         <a href="https://brand.naver.com/binggrae" class="shop" target="_blank">SHOP</a>
         <a class="top"><img src="./img/layout/fix_arrow.png" alt="arrow"></a>
       </aside>
+    </div>
+
+    <!-- chat box -->
+    <div class="chat_box">
+      <div class="chat_inner">
+        <div class="chat_sec01">
+          <h4>빙그레FAQ챗봇</h4>
+          <figure><img src="./img/main/ham_close.png" alt="close"></figure>
+        </div>
+        <div class="chat_sec02">
+          <div class="menu">
+            <div class="title">
+              <p>자주 묻는 질문에서 먼저 확인하세요</p>
+              <img src="./img/layout/lang_btn.png" alt="bottom">
+            </div>
+            <div class="menu_container">
+              <div class="menu_wrap">
+                <p>
+                  빙그레에서 자주 묻는 질문을 준비했습니다.<br>
+                  원하시는 카테고리 선택시, 해당 페이지로 연결됩니다.
+                </p>
+                <ul>
+                  <li><a href="#">아이스크림</a></li>
+                  <li><a href="#">우유/치즈</a></li>
+                  <li><a href="#">발효유</a></li>
+                  <li><a href="#">커피/음료</a></li>
+                  <li><a href="#">스낵</a></li>
+                  <li><a href="#">기업일반</a></li>
+                  <li><a href="#">재활용</a></li>
+                  <li><a href="#">온라인몰</a></li>
+                  <li><a href="#">해외(수출,수입)</a></li>
+                  <li><a href="#">기타</a></li>
+                </ul>
+                <button type="button">
+                  <p>닫기</p>
+                  <img src="./img/main/ham_close.png" alt="close">
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chat_sec03">
+          <div class="binggrae">
+            <figure><img src="./img/icon/chat_icon.png" alt="chat_icon"></figure>
+            <h3>빙그레</h3>
+          </div>
+          <div class="contents">
+            <div class="contents_01">
+              <p>
+                안녕하세요. 고객님<br>
+                궁금한 내용은 아래의 버튼을 선택해주세요.
+              </p>
+            </div>
+            <ul class="menu_01">
+              <li><a href="#">제품 카테고리</a></li>
+              <li><a href="#">소비기한</a></li>
+              <li><a href="#">HACCP 인증 제품</a></li>
+              <li><a href="#">제품 공급 문의</a></li>
+              <li><a href="#">단산/재출시</a></li>
+            </ul>
+            <div class="contents_02">
+              <p>
+                찾으시는 정보가 없으신가요?<br>
+                아래의 1:1문의하기 버튼을 선택하여<br>
+                온라인 접수 주시면, 빠르게 답변드리겠습니다.
+              </p>
+            </div>
+            <ul class="menu_02">
+              <li><a href="#">1:1 문의하기</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="chat_sec04">
+          <div class="home">
+            <img src="./img/icon/chat_reset.png" alt="home">
+            <p>처음으로</p>
+          </div>
+        </div>
+      </div>
     </div>
     
     <div class="front_container">
@@ -79,7 +150,7 @@
             <form action="#" class="search" id="search">
               <div class="search_bar">
                 <img src="./img/main/search_icon.png" alt="search">
-                <input type="text" placeholder="검색어를 입력해 주세요">
+                <input type="text" placeholder="제품명을 입력해 주세요">
               </div>
               <button type="button"><a>SEARCH</a></button>
             </form>
@@ -91,7 +162,7 @@
             <div class="slider sec02_slider_01">
               <h2>행복한 빙그레의 맛!</h2>
               <div class="swiper swiper_01">
-                <ul class="swiper-wrapper" data-aos="fade-up" data-aos-duration="2000"></ul>
+                <ul class="swiper-wrapper"></ul>
                 <div class="swiper-button-next"><img src="./img/icon/next_arrow.png" alt="next"></div>
                 <div class="swiper-button-prev"><img src="./img/icon/prev_arrow.png" alt="prev"></div>
                 <div class="swiper-pagination"></div>
@@ -100,7 +171,7 @@
             <div class="slider sec02_slider_02">
               <h2>BRAND SHOP</h2>
               <div class="swiper swiper_02">
-                <ul class="swiper-wrapper" data-aos="fade-up" data-aos-duration="2000"></ul>
+                <ul class="swiper-wrapper"></ul>
                 <div class="swiper-button-next"><img src="./img/icon/next_arrow.png" alt="next"></div>
                 <div class="swiper-button-prev"><img src="./img/icon/prev_arrow.png" alt="prev"></div>
                 <div class="swiper-pagination"></div>
@@ -109,11 +180,11 @@
           </section>
 
           <!-- section 03 -->
-          <section class="section section_03" data-aos="fade-up" data-aos-duration="1000">
+          <section class="section section_03">
             <h2>고객문의 및 불편사항</h2>
             <div class="contents_box">
               <div class="counsel">
-                <div class="email" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                <div class="email">
                   <h4>이메일 상담</h4>
                   <p>
                     빙그레에 궁금한 사항을 <br class="mo"> 문의해 주세요. <br>
@@ -121,7 +192,7 @@
                   </p>
                   <a>상담하기</a>
                 </div>
-                <div class="tel" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                <div class="tel">
                   <h4>전화 상담</h4>
                   <p class="phone">080.022.0056</p>
                   <p class="time">
@@ -132,7 +203,7 @@
               <div class="qna">
                 <div class="qna_title">
                   <h4>자주 묻는 질문에 내용이 없을 경우, 이메일 및 전화 상담 바랍니다.</h4>
-                  <button type="button" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">더보기</button>
+                  <button type="button">더보기</button>
                 </div>
                 <ul class="qna_list">
                   <li>
@@ -150,9 +221,9 @@
           </section>
 
           <!-- section 04 -->
-           <section class="section section_04" data-aos="fade-up" data-aos-duration="1000">
+           <section class="section section_04">
             <h2>빙그레 임직원 및 종사자 온라인 제보</h2>
-            <div class="allbox" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+            <div class="allbox">
               <div class="box box_1">
                 <p>
                   빙그레 임직원의 부당한 요구 또는 업무처리,<br>
@@ -210,7 +281,6 @@
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
   AOS.init({
-    once: true,
   });
 </script>
 </html>
