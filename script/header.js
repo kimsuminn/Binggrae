@@ -416,6 +416,11 @@ function hamMenu() {
       
       aTag.addEventListener('click', (e) => {
         e.preventDefault();
+
+        if (innerWidth > 1024) {
+          return;
+        }
+        
         arrowImg.classList.toggle('on');
 
         arrowImgs.forEach((val2, idx) => {
