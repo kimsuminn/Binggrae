@@ -59,7 +59,7 @@ function headerContainer() {
     }).join("");
   
     section01.innerHTML = `
-      <a href="/binggrae/">
+      <a href="/">
         ${logoList}
       </a>
     `;
@@ -117,13 +117,13 @@ function headerContainer() {
       if (val.title === '제품소개') {
         let subList = sub.map(val2 => {
           return `
-            <li><a href="/binggrae/product.html">${val2}</a></li>
+            <li><a href="/product.html">${val2}</a></li>
           `;
         }).join("");
 
         return `
           <li>
-            <a href="/binggrae/product.html">${val.title}</a>
+            <a href="/product.html">${val.title}</a>
             <ul class="depth02">
               ${subList}
             </ul>
@@ -204,8 +204,8 @@ function headerContainer() {
           </span>
         </p>
         <ul>
-          <li><a href="/binggrae/">KR</a></li>
-          <li><a href="#">EN</a></li>
+          <li><a href="/">KR</a></li>
+          <li><a href="/">EN</a></li>
         </ul>
       </div>
     `;
@@ -325,7 +325,7 @@ function hamMenu() {
       let subMenuList = subMenu.map(val => {
         return `
           <li>
-            <a href="https://kimsuminn.github.io/binggrae/product.html">${val}</a>
+            <a href="/product.html">${val}</a>
             <figure><img src="https://kimsuminn.github.io/binggrae/img/layout/pc_ham_hover_img.png" alt="ham_hover"></figure>
           </li>
         `;
@@ -333,7 +333,7 @@ function hamMenu() {
 
       return `
         <li>
-          <a href="https://kimsuminn.github.io/binggrae/product.html">
+          <a href="#">
             <span>${val.main}</span>
             <figure class="mo"><img src="https://kimsuminn.github.io/binggrae/img/main/m_ham_menu_btn.png" alt="mo" class='img_${idx + 1}'></figure>
           </a>
@@ -413,7 +413,8 @@ function hamMenu() {
       let ulList = val.querySelector('.depth02');
       let liList = ulList.querySelectorAll('li');
       
-      aTag.addEventListener('click', () => {
+      aTag.addEventListener('click', (e) => {
+        e.preventDefault();
         arrowImg.classList.toggle('on');
 
         arrowImgs.forEach((val2, idx) => {
@@ -443,8 +444,8 @@ function hamMenu() {
 
     lang.classList.add('lang_2');
     lang.innerHTML = `
-      <li class='on'><a href="/binggrae/">KR</a></li>
-      <li><a href="/binggrae/">EN</a></li>
+      <li class='on'><a href="/">KR</a></li>
+      <li><a href="/">EN</a></li>
     `;
 
     aTag.innerText = '오시는길';

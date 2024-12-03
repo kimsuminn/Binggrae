@@ -55,7 +55,7 @@
 }
 
 .front_container .section > .search .search {
-  width: 60%;
+  width: 100%;
   height: 80px;
   display: flex;
   justify-content: space-between;
@@ -68,6 +68,7 @@
 }
 
 .front_container .section > .search .search .search_bar {
+  flex: 1;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -76,7 +77,6 @@
 
 .front_container .section > .search .search .search_bar input {
   height: 60px;
-  flex: 1;
   border: none;
   font-size: 1rem;
   outline: none;
@@ -93,4 +93,152 @@
   font-size: 0.9rem;
   font-weight: bold;
   letter-spacing: -0.05rem;
+}
+
+/* category */
+.front_container .section .product {
+  width: 100%;
+  padding: 6rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+.front_container .section .product .swiper ul li a {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  text-align: center;
+}
+
+.front_container .section .product .swiper ul li a img {
+  width: 160px;
+  border-radius: 100%;
+  border: 2px solid transparent;
+  transition: .3s;
+}
+
+.front_container .section .product .swiper ul li.on a img {
+  border: 2px solid #E73229;
+}
+
+.front_container .section .product .swiper {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 3rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.front_container .section .product .swiper .swiper-wrapper {
+  width: 100%;
+  display: flex;
+}
+
+.front_container .section .product .swiper :is(.swiper-button-prev, .swiper-button-next)::after {
+  position: absolute;
+  top: 50%;
+  display: none;
+}
+
+.front_container .section .product .itemList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.front_container .section .product .itemList h3 {
+  font-size: 1.3rem;
+  font-family: "binggrae-Bold";
+}
+
+.front_container .section .product .itemList ul {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+@media screen and (max-width: 1563px) {
+  
+}
+
+@media screen and (max-width: 1190px) {
+  
+}
+
+@media screen and (max-width: 1024px) {
+  .front_container .section > .search h3 {
+    font-size: 1.2rem;
+  }
+
+  .front_container .section > .search .search {
+    height: 70px;
+  }
+
+  .front_container .section > .search .search .search_bar input {
+    height: 50px;
+  }
+
+  .front_container .section > .search .search button {
+    height: 45px;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .front_container .section > .search .search {
+    height: 50px;
+  }
+
+  .front_container .section > .search .search .search_bar input {
+    height: 30px;
+    font-size: 0.9rem;
+  }
+
+  .front_container .section > .search .search button {
+    height: 30px;
+    padding: 0 2rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .front_container .section > .search h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+
+  .front_container .section > .search {
+    padding: 1.5rem;
+  }
+
+  .front_container .section > .search .search {
+    gap: 0;
+    padding: 0 0.5rem;
+  }
+
+  .front_container .section > .search .search .search_bar {
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .front_container .section > .search .search .search_bar img {
+    width: 1rem;
+  }
+
+  .front_container .section > .search .search .search_bar input {
+    width: 100%;
+    padding: 0 0.25rem;
+    background-color: antiquewhite;
+  }
+
+  .front_container .section > .search .search button {
+    padding: 0 0.25rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+
 }
