@@ -373,9 +373,10 @@ function hamMenu() {
   function mobileHam() {
     // ham section01
     let section01 = document.querySelector('.hamberger_menu .ham_container .ham_sec01');
-
     let container = document.createElement('div');
+
     container.classList.add('sec01_container');
+
     let ulList = document.createElement('ul');
     let sec01_menu = ['구매포털시스템', '인재채용'];
     let liEel = sec01_menu.map(val => {
@@ -460,6 +461,7 @@ function hamMenu() {
   let closeBtn = document.querySelector('.hamberger_menu .ham_container .ham_sec01 button');
   let hamBtn = document.querySelector('.header_sec03 .right .hamberger a');
   let hamMenu = document.querySelector('.hamberger_menu');
+  let hamContainer = document.querySelector('.hamberger_menu .ham_container');
   let body = document.querySelector('body');
   
   closeBtn.addEventListener('click', () => {
@@ -468,6 +470,23 @@ function hamMenu() {
     
     if (hamBtn.classList.contains('on')) {
       hamBtn.classList.remove('on');
+    }
+  })
+
+  // 외부영역 클릭시 ham menu 닫힘
+  document.addEventListener('click', (e) => {
+    if (window.innerWidth > 1024) {
+      return;
+    }
+
+    if (hamContainer.contains(e.target) || hamBtn.contains(e.target)) {
+      return;
+    }
+
+    if (hamBtn.classList.contains('on')) {
+      hamBtn.classList.remove('on');
+      hamMenu.style.right = '-100%';
+      body.style.overflow = 'visible';
     }
   })
 }
