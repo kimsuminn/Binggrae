@@ -7,13 +7,13 @@ function headerTop() {
       name: '구매포털시스템',
       img: 'https://kimsuminn.github.io/binggrae/img/main/link_arrow02.png',
       alt: 'link_arrow',
-      link: '#'
+      link: 'https://srm.bing.co.kr/'
     },
     {
       name: '인재채용',
       img: 'https://kimsuminn.github.io/binggrae/img/main/link_arrow02.png',
       alt: 'link_arrow',
-      link: '#'
+      link: 'https://recruit.bing.co.kr/app/web/main/index_new.jsp'
     }
   ]
 
@@ -21,7 +21,7 @@ function headerTop() {
   let addMenu = menuName.map(val => {
     return `
       <li>
-        <a href=${val.link}>
+        <a href=${val.link} target="_blank">
           <span>${val.name}</span>
           <img src=${val.img} alt=${val.alt}>
         </a>
@@ -378,12 +378,22 @@ function hamMenu() {
     container.classList.add('sec01_container');
 
     let ulList = document.createElement('ul');
-    let sec01_menu = ['구매포털시스템', '인재채용'];
+    let sec01_menu = [
+      {
+        name: '구매포털시스템',
+        link: 'https://srm.bing.co.kr/'
+      },
+      {
+        name: '인재채용',
+        link: 'https://recruit.bing.co.kr/app/web/main/index_new.jsp'
+      }
+    ]
+
     let liEel = sec01_menu.map(val => {
       return `
         <li>
-          <a href="#">
-            <span>${val}</span>
+          <a href=${val.link} target="_blank">
+            <span>${val.name}</span>
             <img src="https://kimsuminn.github.io/binggrae/img/main/link_arrow02.png" alt="link_arrow">
           </a>
         </li>
@@ -420,7 +430,7 @@ function hamMenu() {
         if (innerWidth > 1024) {
           return;
         }
-        
+
         arrowImg.classList.toggle('on');
 
         arrowImgs.forEach((val2, idx) => {
