@@ -902,65 +902,65 @@ let productItem = [
 function product(list) {
   let itemBox = document.querySelector('.itemBox');
   let moreBtn = document.querySelector('.itemList > button');
+  let itemCnt = document.querySelector('.itemList h3');
 
   itemBox.innerHTML = '';
   moreBtn.style.display = 'block';
 
   let itemList = list.map(val => {
     return `
-      <a href="#">
-        <div class="img">
-          <img src=${val.img} alt=${val.id}>
-          <div class="deco">
-            <div class="deco_1">
-              <p>${val.name}</p>
+      <li>
+        <a href="#">
+          <div class="img">
+            <img src=${val.img} alt=${val.id}>
+            <div class="deco">
+              <div class="deco_1">
+                <p>${val.name}</p>
+              </div>
+              <div class="deco_2">
+                <p>${val.count}개 제품</p>
+              </div>
             </div>
-            <div class="deco_2">
-              <p>${val.count}개 제품</p>
-            </div>
+            <button type="button">더보기</button>
           </div>
-          <button type="button">더보기</button>
-        </div>
-        <p>${val.name}</p>
-      </a>
+          <p>${val.name}</p>
+        </a>
+      </li>
     `;
   });
+
+  itemCnt.textContent = `전체제품(${list.length})`;
+  
+  more(itemList);
+}
+
+function more(list) {
+  let itemBox = document.querySelector('.itemBox');
+  let moreBtn = document.querySelector('.itemList > button');
 
   let itemsPerPage = 16;
   let currentPage = 1;
 
-  function more(list) {
-    itemsPerPage = 16;
-    currentPage = 1;
+  function loadProducts() {
+    let startIndex = (currentPage - 1) * itemsPerPage;
+    let endIndex = currentPage * itemsPerPage;
+    let itemsToLoad = list.slice(startIndex, endIndex);
 
-    function loadProducts() {
-      let startIndex = (currentPage - 1) * itemsPerPage;
-      let endIndex = currentPage * itemsPerPage;
-      let itemsToLoad = list.slice(startIndex, endIndex);
-  
-      itemsToLoad.forEach(val => {
-        let item = document.createElement('li');
-        item.innerHTML = val;
-        itemBox.appendChild(item);
-      });
-  
-      if (endIndex >= list.length) {
-        moreBtn.style.display = 'none';
-      }
+    itemBox.innerHTML += itemsToLoad.join('');
+
+    if (endIndex >= list.length) {
+      moreBtn.style.display = 'none';
     }
-  
-    moreBtn.addEventListener('click', () => {
-      currentPage++;
-      loadProducts();
-    });
-  
-    loadProducts();
   }
 
-  more(itemList);
+  moreBtn.removeEventListener('click', handleClick);
+  function handleClick() {
+    currentPage++;
+    loadProducts();
+  }
+  moreBtn.addEventListener('click', handleClick);
 
-  let itemCnt = document.querySelector('.itemList h3');
-  itemCnt.textContent = `전체제품(${list.length})`;
+  loadProducts();
 }
 
 function tabBtn() {
@@ -968,21 +968,10 @@ function tabBtn() {
   tabMenu.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      let filterItem = productItem.filter(val => {
-        if (val.menu_code == e.currentTarget.dataset.id) {
-          return val;
-        }
-      })
+      let filterItem = productItem.filter(val => val.menu_code == e.currentTarget.dataset.id);
 
+      tabMenu.forEach(val => val.classList.remove('on'));
       btn.classList.add('on');
-
-      tabMenu.forEach(btn2 => {
-        if (btn != btn2) {
-          if (btn2.classList.contains('on')) {
-            btn2.classList.remove('on');
-          }
-        }
-      })
 
       if (e.currentTarget.dataset.id == 1) {
         product(productItem);
