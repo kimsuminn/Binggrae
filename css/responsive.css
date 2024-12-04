@@ -96,12 +96,9 @@
     display: none;
   }
 
-  header .header_container {
-    height: 100px !important;
-  }
-
   .header_container .header_section {
     height: 100px;
+    padding: 0 1rem;
   }
 
   .header_sec01 a {
@@ -313,9 +310,15 @@
     letter-spacing: -0.1rem;
   }
 
+  /* top bottom btn */
+  aside {
+    bottom: 1rem;
+    right: 1rem;
+  }
+
   /* main */
   .front_container main .main_container .section_01 {
-    padding: 12rem 2.5rem;
+    padding: 12rem 1rem;
     padding-bottom: 2rem;
   }
 
@@ -354,6 +357,9 @@
   }
 
   /* main section 03 */
+  main .main_container .section_03 {
+    padding: 3rem 1rem;
+  }
 
   main .main_container .section_03 .contents_box .counsel > div {
     height: 246px;
@@ -401,6 +407,10 @@
   }
 
   /* main section 04 */
+  main .main_container .section_04 {
+    padding: 6rem 1rem;
+  }
+
   main .main_container .section_04 .allbox .box {
     justify-content: center;
     gap: 1.5rem;
@@ -410,6 +420,7 @@
   /* footer */ 
   footer {
     height: 50vh;
+    padding: 2.5rem 1rem;
   }
 
   footer .sns {
@@ -527,7 +538,7 @@
   }
 
   main .main_container .section_02 .slider .swiper {
-    padding: 0 2rem;
+    padding: 0 1rem;
     padding-bottom: 4rem;
   }
 
@@ -559,13 +570,14 @@
   /* slide 02 */
   main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide {
     cursor: pointer;
+    padding: 0;
   }
 
-  main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide:hover {
+  main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide .wrap:hover {
     box-shadow: none;
   }
 
-  main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide .hover {
+  main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide .wrap .hover {
     display: none;
   }
 

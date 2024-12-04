@@ -44,6 +44,7 @@ main .main_container .section_01 .search {
 }
 
 main .main_container .section_01 .search .search_bar {
+  flex: 1;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -51,8 +52,8 @@ main .main_container .section_01 .search .search_bar {
 }
 
 main .main_container .section_01 .search .search_bar input {
-  height: 60px;
   flex: 1;
+  height: 60px;
   border: none;
   font-size: 1rem;
   outline: none;
@@ -119,22 +120,21 @@ main .main_container .section_02 .slider .swiper {
   max-width: 1600px;
   margin: 0 auto;
   padding: 0 4rem;
-  overflow: hidden;
   position: relative;
 }
 
 main .main_container .section_02 .slider .swiper .swiper-wrapper {
-  width: 100%;
   padding: 2rem 0;
   display: flex;
   transform: translateY(2rem);
   opacity: 0;
-  transition: .8s;
+  transition: .5s;
 }
 
 main .main_container .section_02 .slider .swiper .swiper-wrapper .swiper-slide {
   flex-shrink: 0;
-  transition: .8s;
+  transition: .5s;
+  overflow: hidden;
 }
 
 main .main_container .section_02 .slider .swiper .swiper-wrapper .swiper-slide:hover {
@@ -186,7 +186,12 @@ main .main_container .section_02 .slider .swiper .swiper-pagination {
 
 /* slide 2 */
 main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide {
+  padding: 0.5rem;
+}
+
+main .main_container .section_02 .slider .swiper .swiper-wrapper .swiper-slide .wrap {
   height: 240px;
+  background-color: #fff;
   border: 1px solid #efefef;
   border-radius: 30px;
   overflow: hidden;
@@ -196,16 +201,16 @@ main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slid
   position: relative;
 }
 
-main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide:hover {
-  box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.1);
+main .main_container .section_02 .slider .swiper .swiper-wrapper .swiper-slide .wrap:hover {
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.09);
 }
 
-main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide > img {
+main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide .wrap > img {
   width: 50%;
   margin: auto;
 }
 
-main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide .hover {
+main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide .wrap .hover {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -219,11 +224,11 @@ main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slid
   padding: 1rem;
 }
 
-main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide:hover .hover {
+main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide .wrap:hover .hover {
   top: 0;
 }
 
-main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide .hover .content {
+main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide .wrap .hover .content {
   width: 100%;
   height: 100%;
   display: flex;
@@ -235,29 +240,29 @@ main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slid
   transition: .5s;
 }
 
-main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide:hover .hover .content {
+main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide .wrap:hover .hover .content {
   opacity: 1;
 }
 
-main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide .hover .content img {
+main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide .wrap .hover .content img {
   width: 50%;
   margin: 0 auto;
 }
 
-main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide .hover .content span {
+main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide .wrap .hover .content span {
   display: block;
   width: 24px;
   height: 1px;
   background-color: #dedede;
 }
 
-main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide .hover .content p {
+main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide .wrap .hover .content p {
   font-size: 0.9rem;
   line-height: 1.2;
   text-align: center;
 }
 
-main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide .hover button {
+main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide .wrap .hover button {
   width: 100%;
   border: none;
   border-radius: 30px;
@@ -270,7 +275,7 @@ main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slid
   transform: .3s;
 }
 
-main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide:hover .hover button {
+main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide .wrap:hover .hover button {
   opacity: 1;
 }
 
@@ -298,7 +303,7 @@ main .main_container .section_03 .contents_box {
 main .main_container .section_03 .contents_box .counsel {
   display: flex;
   gap: 2rem;
-  transition: .8s;
+  transition: .5s;
   transform: translateY(2rem);
   opacity: 0;
 }
@@ -375,9 +380,6 @@ main .main_container .section_03 .contents_box .qna {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  transition: .8s;
-  transform: translateY(2rem);
-  opacity: 0;
 }
 
 main .main_container .section_03 .contents_box .qna .qna_title {
@@ -401,7 +403,9 @@ main .main_container .section_03 .contents_box .qna .qna_title button {
   color: #000;
   padding: 0.5rem 3rem;
   cursor: pointer;
-  transition: .3s;
+  transition: .5s;
+  transform: translateY(2rem);
+  opacity: 0;
 }
 
 main .main_container .section_03 .contents_box .qna .qna_title button:hover {
@@ -482,7 +486,7 @@ main .main_container .section_04 .allbox {
   margin: 0 auto;
   display: flex;
   gap: 2rem;
-  transition: .8s;
+  transition: .5s;
   transform: translateY(2rem);
   opacity: 0;
 }

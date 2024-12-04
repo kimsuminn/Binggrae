@@ -166,14 +166,16 @@ function product() {
     let slideAdd_02 = slide_item_02.map((val, idx) => {
       return `
         <li class="swiper-slide">
-          <img src=${val.img} alt=${idx + 1} class="title">
-          <div class="hover">
-            <div class="content">
-              <img src=${val.img} alt=${idx + 1}>
-              <span></span>
-              <p>${val.text}</p>
+          <div class="wrap">
+            <img src=${val.img} alt=${idx + 1} class="title">
+            <div class="hover">
+              <div class="content">
+                <img src=${val.img} alt=${idx + 1}>
+                <span></span>
+                <p>${val.text}</p>
+              </div>
+              <button type="button">구입하기</button>
             </div>
-            <button type="button">구입하기</button>
           </div>
         </li>
       `;
@@ -222,16 +224,16 @@ function product() {
         },
         770: {
           slidesPerView: 4,
-          spaceBetween: 16,
+          spaceBetween: 0,
           slidesPerGroup: 1,
         },
         1024: {
           slidesPerView: 5,
-          spaceBetween: 16,
+          spaceBetween: 0,
         },
         1300: {
           slidesPerView: 6,
-          spaceBetween: 16,
+          spaceBetween: 0,
         },
       }
     });
@@ -278,7 +280,7 @@ function scrollEvent() {
   let slide_01 = document.querySelector('main .main_container .section_02 .slider .swiper_01 .swiper-wrapper');
   let slide_02 = document.querySelector('main .main_container .section_02 .slider .swiper_02 .swiper-wrapper');
   let counsel = document.querySelector('main .main_container .section_03 .contents_box .counsel');
-  let qna = document.querySelector('main .main_container .section_03 .contents_box .qna');
+  let qnaBtn = document.querySelector('main .main_container .section_03 .contents_box .qna .qna_title button');
   let box = document.querySelector('main .main_container .section_04 .allbox');
   
   function onScroll(el) {
@@ -296,7 +298,7 @@ function scrollEvent() {
     onScroll(slide_01);
     onScroll(slide_02);
     onScroll(counsel);
-    onScroll(qna);
+    onScroll(qnaBtn);
     onScroll(box);
   });
 
