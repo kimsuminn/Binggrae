@@ -55,7 +55,7 @@ function addCategory(category) {
   let menu = document.querySelector('section .product nav ul');
   let list = category.map(val => {
     return `
-      <li class="swiper-slide">
+      <li class="swiper-slide" data-id=${val.id}>
         <a href="#">
           <img src=${val.img} alt=${val.id}>
           <p>${val.category}</p>
@@ -65,6 +65,9 @@ function addCategory(category) {
   }).join("");
 
   menu.innerHTML = list;
+
+  let all = menu.querySelector('li:first-child');
+  all.classList.add('on');
 
   let swiper = new Swiper(".category", {
     cssMode: true,
@@ -222,33 +225,774 @@ let productItem = [
     menu: '커피',
     menu_code: 5
   },
+  {
+    id: 17,
+    name: '프로바이오틱스 스트링치즈',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_017.png',
+    count: 2,
+    menu: '우유/치즈',
+    menu_code: 3
+  },
+  {
+    id: 18,
+    name: '요플레 토핑',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_018.png',
+    count: 3,
+    menu: '발효유',
+    menu_code: 4
+  },
+  {
+    id: 19,
+    name: '요플레 프로틴',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_019.png',
+    count: 4,
+    menu: '발효유',
+    menu_code: 4
+  },
+  {
+    id: 20,
+    name: '그라시아',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_020.png',
+    count: 4,
+    menu: '아이스크림',
+    menu_code: 2
+  },
+  {
+    id: 21,
+    name: '닥터캡슐',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_021.png',
+    count: 1,
+    menu: '건강지향',
+    menu_code: 9
+  },
+  {
+    id: 22,
+    name: '더:단백',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_022.png',
+    count: 16,
+    menu: '건강지향',
+    menu_code: 9
+  },
+  {
+    id: 23,
+    name: '빙그레 빙수',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_023.png',
+    count: 2,
+    menu: '아이스크림',
+    menu_code: 2
+  },
+  {
+    id: 24,
+    name: '아연워터',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_024.png',
+    count: 2,
+    menu: '건강지향',
+    menu_code: 9
+  },
+  {
+    id: 25,
+    name: '빙그레 생크림빵',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_025.png',
+    count: 2,
+    menu: '스낵/디저트',
+    menu_code: 8
+  },
+  {
+    id: 26,
+    name: '비바시티',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_026.png',
+    count: 3,
+    menu: '건강지향',
+    menu_code: 9
+  },
+  {
+    id: 27,
+    name: '비비빅',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_027.png',
+    count: 2,
+    menu: '아이스크림',
+    menu_code: 2
+  },
+  {
+    id: 28,
+    name: '빵또아',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_028.png',
+    count: 4,
+    menu: '아이스크림',
+    menu_code: 2
+  },
+  {
+    id: 29,
+    name: '뽕따',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_029.png',
+    count: 1,
+    menu: '아이스크림',
+    menu_code: 2
+  },
+  {
+    id: 30,
+    name: '요맘때',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_030.png',
+    count: 13,
+    menu: '아이스크림',
+    menu_code: 2
+  },
+  {
+    id: 31,
+    name: '링키바',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_031.png',
+    count: 2,
+    menu: '아이스크림',
+    menu_code: 2
+  },
+  {
+    id: 32,
+    name: '쿠앤크',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_032.png',
+    count: 3,
+    menu: '아이스크림',
+    menu_code: 2
+  },
+  {
+    id: 33,
+    name: '엔초',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_033.png',
+    count: 1,
+    menu: '아이스크림',
+    menu_code: 2
+  },
+  {
+    id: 34,
+    name: '까페오레',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_034.png',
+    count: 1,
+    menu: '아이스크림',
+    menu_code: 2
+  },
+  {
+    id: 35,
+    name: '따옴바',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_035.png',
+    count: 5,
+    menu: '아이스크림',
+    menu_code: 2
+  },
+  {
+    id: 36,
+    name: '카카오바',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_036.png',
+    count: 3,
+    menu: '아이스크림',
+    menu_code: 2
+  },
+  {
+    id: 37,
+    name: '캔디바',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_037.png',
+    count: 1,
+    menu: '아이스크림',
+    menu_code: 2
+  },
+  {
+    id: 38,
+    name: '생귤탱귤',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_038.png',
+    count: 2,
+    menu: '아이스크림',
+    menu_code: 2
+  },
+  {
+    id: 39,
+    name: '디핀다트',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_039.png',
+    count: 4,
+    menu: '아이스크림',
+    menu_code: 2
+  },
+  {
+    id: 40,
+    name: '바나나맛우유 MiNi',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_040.png',
+    count: 3,
+    menu: '우유/치즈',
+    menu_code: 3
+  },
+  {
+    id: 41,
+    name: '엑설런트',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_041.png',
+    count: 2,
+    menu: '아이스크림',
+    menu_code: 2
+  },
+  {
+    id: 42,
+    name: '더위사냥',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_042.png',
+    count: 2,
+    menu: '아이스크림',
+    menu_code: 2
+  },
+  {
+    id: 43,
+    name: '파워캡',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_043.png',
+    count: 2,
+    menu: '아이스크림',
+    menu_code: 2
+  },
+  {
+    id: 44,
+    name: '타임가공유',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_044.png',
+    count: 2,
+    menu: '우유/치즈',
+    menu_code: 3
+  },
+  {
+    id: 45,
+    name: '리랙스',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_045.png',
+    count: 2,
+    menu: '우유/치즈',
+    menu_code: 3
+  },
+  {
+    id: 46,
+    name: '빙그레우유',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_046.png',
+    count: 3,
+    menu: '우유/치즈',
+    menu_code: 3
+  },
+  {
+    id: 47,
+    name: '굿모닝우유',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_047.png',
+    count: 2,
+    menu: '우유/치즈',
+    menu_code: 3
+  },
+  {
+    id: 48,
+    name: '모짜렐라 피자치즈',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_048.png',
+    count: 1,
+    menu: '우유/치즈',
+    menu_code: 3
+  },
+  {
+    id: 49,
+    name: '통모짜 스트링치즈',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_049.png',
+    count: 1,
+    menu: '우유/치즈',
+    menu_code: 3
+  },
+  {
+    id: 50,
+    name: '프로틴 스트링치즈',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_050.png',
+    count: 1,
+    menu: '우유/치즈',
+    menu_code: 3
+  },
+  {
+    id: 51,
+    name: '11칼로리 곤약젤리',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_051.png',
+    count: 3,
+    menu: '스낵/디저트',
+    menu_code: 8
+  },
+  {
+    id: 52,
+    name: '요플레 Only',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_052.png',
+    count: 4,
+    menu: '발효유',
+    menu_code: 4
+  },
+  {
+    id: 53,
+    name: '요플레 플레인',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_053.png',
+    count: 2,
+    menu: '발효유',
+    menu_code: 4
+  },
+  {
+    id: 54,
+    name: '요플레 플레인 화이트',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_054.png',
+    count: 2,
+    menu: '발효유',
+    menu_code: 4
+  },
+  {
+    id: 55,
+    name: '요플레 클래식',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_055.png',
+    count: 1,
+    menu: '발효유',
+    menu_code: 4
+  },
+  {
+    id: 56,
+    name: '래핑카우 벨큐브',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_056.png',
+    count: 6,
+    menu: '우유/치즈',
+    menu_code: 3
+  },
+  {
+    id: 57,
+    name: '래핑카우 포션',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_057.png',
+    count: 6,
+    menu: '우유/치즈',
+    menu_code: 3
+  },
+  {
+    id: 58,
+    name: '요플레 이지드링크',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_058.png',
+    count: 1,
+    menu: '발효유',
+    menu_code: 4
+  },
+  {
+    id: 59,
+    name: '요플레 라이트',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_059.png',
+    count: 3,
+    menu: '발효유',
+    menu_code: 4
+  },
+  {
+    id: 60,
+    name: '끼리',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_060.png',
+    count: 5,
+    menu: '우유/치즈',
+    menu_code: 3
+  },
+  {
+    id: 61,
+    name: '미니베이비벨',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_061.png',
+    count: 2,
+    menu: '우유/치즈',
+    menu_code: 3
+  },
+  {
+    id: 62,
+    name: '요플레 오프룻',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_062.png',
+    count: 3,
+    menu: '발효유',
+    menu_code: 4
+  },
+  {
+    id: 63,
+    name: '요플레 바이오플레',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_063.png',
+    count: 4,
+    menu: '발효유',
+    menu_code: 4
+  },
+  {
+    id: 64,
+    name: '요플레 짜먹는 키즈',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_064.png',
+    count: 2,
+    menu: '발효유',
+    menu_code: 4
+  },
+  {
+    id: 65,
+    name: '쥬시쿨',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_065.png',
+    count: 3,
+    menu: '발효유',
+    menu_code: 4
+  },
+  {
+    id: 66,
+    name: '뽀로로와 친구들',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_066.png',
+    count: 2,
+    menu: '발효유',
+    menu_code: 4
+  },
+  {
+    id: 67,
+    name: '빙그레 요구르트',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_067.png',
+    count: 1,
+    menu: '발효유',
+    menu_code: 4
+  },
+  {
+    id: 68,
+    name: '꽃게랑',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_068.png',
+    count: 6,
+    menu: '스낵/디저트',
+    menu_code: 8
+  },
+  {
+    id: 69,
+    name: '야채타임',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_069.png',
+    count: 1,
+    menu: '스낵/디저트',
+    menu_code: 8
+  },
+  {
+    id: 70,
+    name: '스모키베이컨칩',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_070.png',
+    count: 1,
+    menu: '스낵/디저트',
+    menu_code: 8
+  },
+  {
+    id: 71,
+    name: '쟈키쟈키',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_071.png',
+    count: 1,
+    menu: '스낵/디저트',
+    menu_code: 8
+  },
+  {
+    id: 72,
+    name: '뽀로로와 친구들 비스킷',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_072.png',
+    count: 3,
+    menu: '스낵/디저트',
+    menu_code: 8
+  },
+  {
+    id: 73,
+    name: '[수출] 메로나',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_073.png',
+    count: 6,
+    menu: '수출제품',
+    menu_code: 10
+  },
+  {
+    id: 74,
+    name: '[수출] 붕어싸만코',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_074.png',
+    count: 5,
+    menu: '수출제품',
+    menu_code: 10
+  },
+  {
+    id: 75,
+    name: '[수출] 바나나맛우유',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_075.png',
+    count: 9,
+    menu: '수출제품',
+    menu_code: 10
+  },
+  {
+    id: 76,
+    name: '[수출] 아카페라',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_076.png',
+    count: 5,
+    menu: '수출제품',
+    menu_code: 10
+  },
+  {
+    id: 77,
+    name: '[수출] 뽕따',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_077.png',
+    count: 3,
+    menu: '수출제품',
+    menu_code: 10
+  },
+  {
+    id: 78,
+    name: '[수출] 빵또아',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_078.png',
+    count: 3,
+    menu: '수출제품',
+    menu_code: 10
+  },
+  {
+    id: 79,
+    name: '[수출] 비비빅',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_079.png',
+    count: 2,
+    menu: '수출제품',
+    menu_code: 10
+  },
+  {
+    id: 80,
+    name: '[수출] 더위사냥',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_080.png',
+    count: 1,
+    menu: '수출제품',
+    menu_code: 10
+  },
+  {
+    id: 81,
+    name: '[수출] 엔초',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_081.png',
+    count: 1,
+    menu: '수출제품',
+    menu_code: 10
+  },
+  {
+    id: 82,
+    name: '[수출] 꽃게랑',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_082.png',
+    count: 3,
+    menu: '수출제품',
+    menu_code: 10
+  },
+  {
+    id: 83,
+    name: '마노플랜',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_083.png',
+    count: 1,
+    menu: '건강지향',
+    menu_code: 9
+  },
+  {
+    id: 84,
+    name: '아카페라 스페셜티 PET',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_084.png',
+    count: 3,
+    menu: '커피',
+    menu_code: 5
+  },
+  {
+    id: 85,
+    name: '아카페라 사이즈업',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_085.png',
+    count: 4,
+    menu: '커피',
+    menu_code: 5
+  },
+  {
+    id: 86,
+    name: '아카페라 심플리',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_086.png',
+    count: 3,
+    menu: '커피',
+    menu_code: 5
+  },
+  {
+    id: 87,
+    name: '아카페라 오리지널',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_087.png',
+    count: 5,
+    menu: '커피',
+    menu_code: 5
+  },
+  {
+    id: 88,
+    name: '오늘의 커피',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_088.png',
+    count: 2,
+    menu: '커피',
+    menu_code: 5
+  },
+  {
+    id: 89,
+    name: '따옴',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_089.png',
+    count: 12,
+    menu: '주스',
+    menu_code: 6
+  },
+  {
+    id: 90,
+    name: '따옴 Plus',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_090.png',
+    count: 1,
+    menu: '주스',
+    menu_code: 6
+  },
+  {
+    id: 91,
+    name: '따옴 Organic',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_091.png',
+    count: 3,
+    menu: '주스',
+    menu_code: 6
+  },
+  {
+    id: 92,
+    name: '쥬시쿨 에이드',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_092.png',
+    count: 3,
+    menu: '주스',
+    menu_code: 6
+  },
+  {
+    id: 93,
+    name: '야채랑',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_093.png',
+    count: 1,
+    menu: '주스',
+    menu_code: 6
+  },
+  {
+    id: 94,
+    name: '맑은차',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_094.png',
+    count: 5,
+    menu: '음료',
+    menu_code: 7
+  },
+  {
+    id: 95,
+    name: '빙그레 아이스티',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_095.png',
+    count: 2,
+    menu: '음료',
+    menu_code: 7
+  },
+  {
+    id: 96,
+    name: '빙그레 슈퍼부스트',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_096.png',
+    count: 2,
+    menu: '음료',
+    menu_code: 7
+  },
+  {
+    id: 97,
+    name: '빅썬',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_097.png',
+    count: 1,
+    menu: '음료',
+    menu_code: 7
+  },
+  {
+    id: 98,
+    name: '검은깨콩 두유',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_098.png',
+    count: 1,
+    menu: '음료',
+    menu_code: 7
+  },
+  {
+    id: 99,
+    name: '맛있는콩 두유',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_099.png',
+    count: 1,
+    menu: '음료',
+    menu_code: 7
+  },
+  {
+    id: 100,
+    name: 'D.D.D',
+    img: 'https://kimsuminn.github.io/binggrae/img/product/item_100.png',
+    count: 3,
+    menu: '스낵/디저트',
+    menu_code: 8
+  },
 ]
 
-function product() {
+function product(list) {
   let itemBox = document.querySelector('.itemBox');
-  let itemList = productItem.map(val => {
-    return `
-      <li>
-        <a href="#">
-          <div class="img">
-            <img src=${val.img} alt=${val.id}>
-            <div class="deco">
-              <div class="deco_1">
-                <p>${val.name}</p>
-              </div>
-              <div class="deco_2">
-                <p>${val.count}개 제품</p>
-              </div>
-            </div>
-            <button type="button">더보기</button>
-          </div>
-          <p>${val.name}</p>
-        </a>
-      </li>
-    `;
-  }).join("");
+  let moreBtn = document.querySelector('.itemList > button');
 
-  itemBox.innerHTML = itemList;
+  itemBox.innerHTML = '';
+  moreBtn.style.display = 'block';
+
+  let itemList = list.map(val => {
+    return `
+      <a href="#">
+        <div class="img">
+          <img src=${val.img} alt=${val.id}>
+          <div class="deco">
+            <div class="deco_1">
+              <p>${val.name}</p>
+            </div>
+            <div class="deco_2">
+              <p>${val.count}개 제품</p>
+            </div>
+          </div>
+          <button type="button">더보기</button>
+        </div>
+        <p>${val.name}</p>
+      </a>
+    `;
+  });
+
+  let itemsPerPage = 16;
+  let currentPage = 1;
+
+  function more(list) {
+    itemsPerPage = 16;
+    currentPage = 1;
+
+    function loadProducts() {
+      let startIndex = (currentPage - 1) * itemsPerPage;
+      let endIndex = currentPage * itemsPerPage;
+      let itemsToLoad = list.slice(startIndex, endIndex);
+  
+      itemsToLoad.forEach(val => {
+        let item = document.createElement('li');
+        item.innerHTML = val;
+        itemBox.appendChild(item);
+      });
+  
+      if (endIndex >= list.length) {
+        moreBtn.style.display = 'none';
+      }
+    }
+  
+    moreBtn.addEventListener('click', () => {
+      currentPage++;
+      loadProducts();
+    });
+  
+    loadProducts();
+  }
+
+  more(itemList);
+
+  let itemCnt = document.querySelector('.itemList h3');
+  itemCnt.textContent = `전체제품(${list.length})`;
 }
 
-product();
+function tabBtn() {
+  let tabMenu = document.querySelectorAll('section .product nav ul li');
+  tabMenu.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      let filterItem = productItem.filter(val => {
+        if (val.menu_code == e.currentTarget.dataset.id) {
+          return val;
+        }
+      })
+
+      btn.classList.add('on');
+
+      tabMenu.forEach(btn2 => {
+        if (btn != btn2) {
+          if (btn2.classList.contains('on')) {
+            btn2.classList.remove('on');
+          }
+        }
+      })
+
+      if (e.currentTarget.dataset.id == 1) {
+        product(productItem);
+      } else {
+        product(filterItem);
+      }
+    })
+  })
+
+  product(productItem);
+}
+
+tabBtn();

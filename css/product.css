@@ -101,7 +101,7 @@
 /* category */
 .front_container .section .product {
   width: 100%;
-  padding: 6rem 0;
+  padding-top: 6rem;
   display: flex;
   flex-direction: column;
   gap: 6rem;
@@ -128,6 +128,10 @@
   border-radius: 100%;
   border: 2px solid transparent;
   transition: .3s;
+}
+
+.front_container .section .product .swiper ul li:hover a img {
+  border: 2px solid #E73229;
 }
 
 .front_container .section .product .swiper ul li.on a img {
@@ -252,14 +256,36 @@
   padding: 0.75rem 0;
   cursor: pointer;
   transition: .6s;
+  opacity: 0;
 }
 
 .front_container .section .product .itemList ul li a .img:hover button {
+  opacity: 1;
   bottom: 1rem;
 }
 
 .front_container .section .product .itemList ul li a > p {
   font-size: 1rem;
+}
+
+.front_container .section .product .itemList button {
+  width: 160px;
+  margin: 0 auto;
+  margin-top: 4rem;
+  padding: 0.75rem 0;
+  border: 1px solid #cfcfcf;
+  border-radius: 30px;
+  background-color: #fff;
+  letter-spacing: -0.05rem;
+  font-size: 1rem;
+  color: #555;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.front_container .section .product .itemList button:hover {
+  background-color: #E73229;
+  color: #fff;
 }
 
 @media screen and (max-width: 1563px) {
@@ -318,6 +344,10 @@
 
   .front_container .section .product .itemList ul {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .front_container .section .product .itemList ul li a .img:hover button {
+    display: none;
   }
 }
 
