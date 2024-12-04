@@ -392,6 +392,7 @@ main .main_container .section_03 .contents_box .qna .qna_title {
 main .main_container .section_03 .contents_box .qna .qna_title h4 {
   font-size: 1.5rem;
   font-family: "binggrae-Bold";
+  word-break: keep-all;
 }
 
 main .main_container .section_03 .contents_box .qna .qna_title button {
@@ -507,6 +508,7 @@ main .main_container .section_04 .allbox .box {
   letter-spacing: -0.1rem;
   line-height: 1.5;
   cursor: pointer;
+  word-break: keep-all;
 }
 
 main .main_container .section_04 .allbox .box button {

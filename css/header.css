@@ -172,6 +172,7 @@ header .header_container.on {
 .header_sec02 .gnb01 .depth01 > li > .depth02 > li > a {
   font-size: 1rem;
   transition: .3s;
+  word-break: keep-all;
 }
 
 .header_sec02 .gnb01 .depth01 > li > .depth02 > li:hover > a {
