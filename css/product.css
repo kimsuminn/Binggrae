@@ -53,6 +53,7 @@
 .front_container .section > .search h3 {
   font-size: 1.3rem;
   font-weight: 500;
+  word-break: keep-all;
 }
 
 .front_container .section > .search .search {
@@ -174,6 +175,10 @@
 }
 
 @media screen and (max-width: 1024px) {
+  .front_container .section {
+    padding: 0 1rem;
+  }
+
   .front_container .section > .search h3 {
     font-size: 1.2rem;
   }
@@ -195,7 +200,6 @@
 @media screen and (max-width: 769px) {
   .front_container .section > .search .search {
     width: 90%;
-    min-width: 400px;
     height: 50px;
   }
 
@@ -218,10 +222,12 @@
   }
 
   .front_container .section > .search {
+    min-width: 300px;
     padding: 1.5rem;
   }
 
   .front_container .section > .search .search {
+    width: 100%;
     gap: 0;
     padding: 0 0.5rem;
   }
@@ -239,12 +245,15 @@
     width: 100%;
     padding: 0 0.25rem;
   }
-
-  .front_container .section > .search .search button {
-    padding: 0 0.25rem;
-  }
 }
 
 @media screen and (max-width: 360px) {
+  .front_container .section > .search .search {
+    height: 40px;
+  }
 
+  .front_container .section > .search .search button {
+    height: 25px;
+    padding: 0 0.5rem;
+  }
 }

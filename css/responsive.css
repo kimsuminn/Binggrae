@@ -573,6 +573,10 @@
     padding: 0;
   }
 
+  main .main_container .section_02 .slider .swiper .swiper-wrapper .swiper-slide .wrap {
+    height: 200px;
+  }
+
   main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide .wrap:hover {
     box-shadow: none;
   }
