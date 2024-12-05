@@ -127,6 +127,10 @@ header .header_container.on {
   color: #E72F28;
 }
 
+.header_sec02 .gnb01 .depth01 > li > a.on {
+  color: #E72F28;
+}
+
 .header_sec02 .gnb01 .depth01 > li:hover > a::before {
   content: '';
   display: inline-block;

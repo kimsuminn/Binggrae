@@ -71,26 +71,32 @@ function headerContainer() {
   function sec02() {
     let menu = [
       {
+        id: 1,
         title: '회사소개',
         subMenu: ['CEO 인사말', '경영이념', '사업분야', '히스토리']
       },
       {
+        id: 2,
         title: '제품소개',
         subMenu: ['아이스크림', '우유/치즈', '발효유', '커피', '주스', '음료', '스낵/디저트', '건강지향', '수출제품']
       },
       {
+        id: 3,
         title: '지속가능경영',
         subMenu: ['지속가능경영 체계', 'Eco-Friendly', 'Shared Value', 'Global Integrity', '윤리준법경영', '사회공헌', '보고서 및 정책']
       },
       {
+        id: 4,
         title: '투자정보',
         subMenu: ['재무정보', '주식정보', '전자공고', '공시정보', 'IR자료실']
       },
       {
+        id: 5,
         title: '뉴스룸',
         subMenu: ['새소식', '보도자료', '빙그레 스토리', '미디어<br>라이브러리']
       },
       {
+        id: 6,
         title: '고객센터',
         subMenu: ['고객상담', '제품공급문의', '사이버 신고센터', '안전신문고']
       }
@@ -187,6 +193,32 @@ function headerContainer() {
         headerContainer.style.height = '120px';
         subMenuOpacity(0);
         gnb.classList.remove('visible');
+      })
+    })
+
+    // url에 따라 header menu 색상 변경
+    mainMenu.forEach(val => {
+      let mainA = val.querySelector('a');
+      
+      if (window.location.pathname == '/product.html') {
+        if (Number(val.dataset.id) === 2) {
+          mainA.classList.add('on');
+        }
+      }
+
+      let sub = val.querySelectorAll('.depth02 li');
+      let params = new URLSearchParams(window.location.search);
+      let number = params.get('category');
+
+      sub.forEach(menu => {
+        let subA = menu.querySelector('a');
+        let subId = Number(menu.dataset.id);
+
+        if (subId == number) {
+          subA.classList.add('on');
+        } else {
+          subA.classList.remove('on');
+        }
       })
     })
   }
@@ -538,10 +570,6 @@ function hamMenu() {
           } else {
             subA.classList.remove('on');
           }
-
-          if (subId === 1) {
-            subA.classList.add('on');
-          } 
         });
       }
     }
