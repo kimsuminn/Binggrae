@@ -382,7 +382,7 @@ nav.hamberger_menu {
   color: #E72F28;
 }
 
-.ham_sec02 .depth01 > li .depth02 > li:hover a.on {
+.ham_sec02 .depth01 > li .depth02 > li a.on {
   color: #E72F28;
 }
 

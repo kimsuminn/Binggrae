@@ -80,6 +80,14 @@ function addCategory(category) {
     breakpoints: {
       0: {
         slidesPerView: 4,
+        spaceBetween: 1,
+      },
+      360: {
+        slidesPerView: 4,
+        spaceBetween: 4,
+      },
+      500: {
+        slidesPerView: 4,
         spaceBetween: 10,
       },
       750: {

@@ -117,12 +117,12 @@ function headerContainer() {
       if (val.title === '제품소개') {
         let subList = sub.map((val2, idx) => {
           return `
-            <li><a href="/product.html?category=${idx+2}">${val2}</a></li>
+            <li data-id=${idx+2}><a href="/product.html?category=${idx+2}">${val2}</a></li>
           `;
         }).join("");
 
         return `
-          <li>
+          <li data-id=${val.id}>
             <a href="/product.html?category=1">${val.title}</a>
             <ul class="depth02">
               ${subList}
@@ -293,26 +293,32 @@ function hamMenu() {
 
   let hamMenuList = [
     {
+      id: 1,
       main: '회사소개',
       sub: ['CEO 인사말', '경영이념', '사업분야', '히스토리']
     },
     {
+      id: 2,
       main: '제품소개',
       sub: ['전체보기', '아이스크림', '우유/치즈', '발효유', '커피', '주스', '음료', '스낵/디저트', '건강지향', '수출제품']
     },
     {
+      id: 3,
       main: '지속가능경영',
       sub: ['지속가능경영 체계', 'Eco-Friendly', 'Shared Value', 'Global Integrity', '윤리준법경영', '사회공헌', '보고서 및 정책']
     },
     {
+      id: 4,
       main: '투자정보',
       sub: ['재무정보', '주식정보', '전자공고', '공시정보', 'IR자료실']
     },
     {
+      id: 5,
       main: '뉴스룸',
       sub: ['새소식', '보도자료', '빙그레 스토리', '미디어 라이브러리']
     },
     {
+      id: 6,
       main: '고객상담',
       sub: ['고객상담', '1:1 문의하기', '제품공급문의', '사이버 신고센터', '안전신문고', '개인정보처리방침']
     }
@@ -324,7 +330,7 @@ function hamMenu() {
     if (val.main === '제품소개') {
       let subMenuList = subMenu.map((val, idx) => {
         return `
-          <li>
+          <li data-id=${idx+1}>
             <a href="/product.html?category=${idx+1}">${val}</a>
             <figure><img src="https://kimsuminn.github.io/binggrae/img/layout/pc_ham_hover_img.png" alt="ham_hover"></figure>
           </li>
@@ -332,7 +338,7 @@ function hamMenu() {
       }).join("");
 
       return `
-        <li>
+        <li data-id=${val.id}>
           <a href="#">
             <span>${val.main}</span>
             <figure class="mo"><img src="https://kimsuminn.github.io/binggrae/img/main/m_ham_menu_btn.png" alt="mo" class='img_${idx + 1}'></figure>
@@ -504,6 +510,37 @@ function hamMenu() {
       body.style.overflow = 'visible';
     }
   })
+
+  // url에 따라 ham 메뉴 글자색 변경
+  let hamMain = document.querySelectorAll('.hamberger_menu .ham_container .ham_sec02 .depth01 > li');
+  
+  hamMain.forEach(val => {
+    let mainA = val.querySelector('a');
+
+    if (window.location.pathname == '/product.html') {
+      if (Number(val.dataset.id) === 2) {
+        mainA.classList.add('on');
+        mainA.style.color = '#E72F28';
+
+        let hamSub = val.querySelectorAll('.depth02 li');
+        let params = new URLSearchParams(window.location.search);
+        let number = params.get('category');
+
+        hamSub.forEach(sub => {
+          let subA = sub.querySelector('a');
+          let subId = Number(sub.dataset.id);
+
+          if (subId === 1) {
+            subA.classList.add('on');
+          } else if (subId === number) {
+            subA.classList.add('on');
+          } else {
+            subA.classList.remove('on');
+          }
+        });
+      }
+    }
+  });
 }
 
 hamMenu();
