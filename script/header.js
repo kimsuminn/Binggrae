@@ -519,6 +519,9 @@ function hamMenu() {
 
     if (window.location.pathname == '/product.html') {
       if (Number(val.dataset.id) === 2) {
+        if (innerWidth > 1024) {
+          val.classList.add('on');
+        }
         mainA.classList.add('on');
         mainA.style.color = '#E72F28';
 
@@ -529,14 +532,16 @@ function hamMenu() {
         hamSub.forEach(sub => {
           let subA = sub.querySelector('a');
           let subId = Number(sub.dataset.id);
-
-          if (subId === 1) {
-            subA.classList.add('on');
-          } else if (subId === number) {
+          
+          if (subId == number) {
             subA.classList.add('on');
           } else {
             subA.classList.remove('on');
           }
+
+          if (subId === 1) {
+            subA.classList.add('on');
+          } 
         });
       }
     }
@@ -674,4 +679,18 @@ window.addEventListener('resize', () => {
       val.style.height = '0';
     }
   })
+
+  let hamMain = document.querySelectorAll('.hamberger_menu .ham_container .ham_sec02 .depth01 > li');
+  
+  hamMain.forEach(val => {
+    if (window.location.pathname == '/product.html') {
+      if (Number(val.dataset.id) === 2) {
+        if (innerWidth > 1024) {
+          val.classList.add('on');
+        } else {
+          val.classList.remove('on');
+        }
+      }
+    }
+  });
 })

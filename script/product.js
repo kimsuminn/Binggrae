@@ -972,8 +972,14 @@ function tabBtn() {
       let categoryId = e.currentTarget.dataset.id;
 
       let url = new URL(window.location);
-      url.searchParams.set('category', categoryId);
-      window.history.pushState({ category: categoryId }, '', url);
+      let currentCategory = url.searchParams.get('category');
+      // url.searchParams.set('category', categoryId);
+      // window.history.pushState({ category: categoryId }, '', url);
+
+      if (currentCategory !== categoryId) {
+        url.searchParams.set('category', categoryId);
+        window.location.href = url.toString();
+      }
 
       let filterItem = productItem.filter(val => val.menu_code == e.currentTarget.dataset.id);
 
