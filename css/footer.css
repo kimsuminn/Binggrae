@@ -1,6 +1,7 @@
 footer {
   width: 100%;
   height: 40vh;
+  min-height: 500px;
   padding: 2.5rem;
   background-color: #1B1B1B;
   color: #B1B1BB;

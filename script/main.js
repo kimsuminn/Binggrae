@@ -301,7 +301,6 @@ function scrollEvent() {
     onScroll(qnaBtn);
     onScroll(box);
   });
-
 }
 
 scrollEvent();

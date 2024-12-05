@@ -115,15 +115,15 @@ function headerContainer() {
       let sub = val.subMenu;
 
       if (val.title === '제품소개') {
-        let subList = sub.map(val2 => {
+        let subList = sub.map((val2, idx) => {
           return `
-            <li><a href="/product.html">${val2}</a></li>
+            <li><a href="/product.html?category=${idx+2}">${val2}</a></li>
           `;
         }).join("");
 
         return `
           <li>
-            <a href="/product.html">${val.title}</a>
+            <a href="/product.html?category=1">${val.title}</a>
             <ul class="depth02">
               ${subList}
             </ul>
@@ -322,10 +322,10 @@ function hamMenu() {
     let subMenu = val.sub;
 
     if (val.main === '제품소개') {
-      let subMenuList = subMenu.map(val => {
+      let subMenuList = subMenu.map((val, idx) => {
         return `
           <li>
-            <a href="/product.html">${val}</a>
+            <a href="/product.html?category=${idx+1}">${val}</a>
             <figure><img src="https://kimsuminn.github.io/binggrae/img/layout/pc_ham_hover_img.png" alt="ham_hover"></figure>
           </li>
         `;
@@ -509,7 +509,6 @@ function hamMenu() {
 hamMenu();
 
 // aside btn
-
 function help() {
   let chatBtn = document.querySelector('aside .chat .help');
   let textBox = document.querySelector('aside .chat .text_box');

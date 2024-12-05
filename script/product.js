@@ -904,70 +904,69 @@ function product(list) {
   let moreBtn = document.querySelector('.itemList > button');
   let itemCnt = document.querySelector('.itemList h3');
 
+  let itemPerPage = 8;
+  let currentPage = 1;
+  let totalItems = list.length;
+
   itemBox.innerHTML = '';
+  itemCnt.textContent = `전체제품(${totalItems})`;
   moreBtn.style.display = 'block';
 
-  let itemList = list.map(val => {
-    return `
-      <li>
-        <a href="#">
-          <div class="img">
-            <img src=${val.img} alt=${val.id}>
-            <div class="deco">
-              <div class="deco_1">
-                <p>${val.name}</p>
+  function renderProducts() {
+    let startIndex = (currentPage - 1) * itemPerPage;
+    let endIndex = currentPage * itemPerPage;
+    let itemsToShow = list.slice(startIndex, endIndex);
+
+    itemsToShow.forEach(val => {
+      let itemList = `
+        <li>
+          <a href="#">
+            <div class="img">
+              <img src=${val.img} alt=${val.id}>
+              <div class="deco">
+                <div class="deco_1">
+                  <p>${val.name}</p>
+                </div>
+                <div class="deco_2">
+                  <p>${val.count}개 제품</p>
+                </div>
               </div>
-              <div class="deco_2">
-                <p>${val.count}개 제품</p>
-              </div>
+              <button type="button">더보기</button>
             </div>
-            <button type="button">더보기</button>
-          </div>
-          <p>${val.name}</p>
-        </a>
-      </li>
-    `;
-  });
+            <p>${val.name}</p>
+          </a>
+        </li>
+      `;
 
-  itemCnt.textContent = `전체제품(${list.length})`;
-  
-  more(itemList);
-}
+      itemBox.innerHTML += itemList;
+    });
 
-function more(list) {
-  let itemBox = document.querySelector('.itemBox');
-  let moreBtn = document.querySelector('.itemList > button');
-
-  let itemsPerPage = 16;
-  let currentPage = 1;
-
-  function loadProducts() {
-    let startIndex = (currentPage - 1) * itemsPerPage;
-    let endIndex = currentPage * itemsPerPage;
-    let itemsToLoad = list.slice(startIndex, endIndex);
-
-    itemBox.innerHTML += itemsToLoad.join('');
-
-    if (endIndex >= list.length) {
+    if (endIndex >= totalItems) {
       moreBtn.style.display = 'none';
     }
   }
 
-  moreBtn.removeEventListener('click', handleClick);
-  function handleClick() {
+  moreBtn.addEventListener('click', () => {
     currentPage++;
-    loadProducts();
-  }
-  moreBtn.addEventListener('click', handleClick);
+    renderProducts();
+  })
 
-  loadProducts();
+  renderProducts();
 }
 
 function tabBtn() {
   let tabMenu = document.querySelectorAll('section .product nav ul li');
+
   tabMenu.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
+
+      let categoryId = e.currentTarget.dataset.id;
+
+      let url = new URL(window.location);
+      url.searchParams.set('category', categoryId);
+      window.history.pushState({ category: categoryId }, '', url);
+
       let filterItem = productItem.filter(val => val.menu_code == e.currentTarget.dataset.id);
 
       tabMenu.forEach(val => val.classList.remove('on'));
@@ -981,7 +980,17 @@ function tabBtn() {
     })
   })
 
-  product(productItem);
+  let params = new URLSearchParams(window.location.search);
+  let categoryId = params.get('category');
+
+  if (categoryId) {
+    let selectedTab = [...tabMenu].find(btn => btn.dataset.id === categoryId);
+    if (selectedTab) {
+      selectedTab.click();
+    }
+  } else {
+    product(productItem);
+  }
 }
 
 tabBtn();
