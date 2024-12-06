@@ -573,6 +573,11 @@ function hamMenu() {
           } else {
             subA.classList.remove('on');
           }
+
+          if (subId == 1) {
+            subA.classList.add('on');
+          }
+          
         });
       }
     }

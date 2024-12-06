@@ -256,6 +256,14 @@
     margin-left: .25rem;
     transition: 1s;
   }
+
+  .ham_sec02 .depth01 > li .depth02 > li a.on::after {
+    opacity: 1;
+  }
+
+  .ham_sec02 .depth01 > li:nth-child(2) .depth02 > li:not(:first-child) a::after {
+    background-color: transparent !important;
+  }
   
   .ham_sec02 .depth01 > li .depth02 > li figure {
     display: none;
