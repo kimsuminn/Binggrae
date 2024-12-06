@@ -683,6 +683,52 @@ function topBtn() {
 
 topBtn();
 
+// 챗봇 창 드래그 
+// function chatBotDrag() {
+//   let draggable = document.querySelector('.chat_box');
+//   let title = document.querySelector('.chat_box .chat_inner .chat_sec01');
+//   let isDragging = false;
+//   let offsetX, offsetY;
+
+//   draggable.addEventListener('mousedown', (e) => {
+//     isDragging = true;
+
+//     offsetX = e.clientX - draggable.offsetLeft;
+//     offsetY = e.clientY - draggable.offsetTop;
+
+//     title.style.cursor = 'grabbing';
+//     title.style.userSelect = 'none';
+//   });
+
+//   document.addEventListener('mousemove', (e) => {
+//     if (isDragging) {
+//       let x = e.clientX - offsetX;
+//       let y = e.clientY - offsetY;
+
+//       if (x < 0) {
+//         x = 8;
+//       }
+
+//       if (y < 0) {
+//         y = 8;
+//       }
+
+//       draggable.style.left = `${x}px`;
+//       draggable.style.top = `${y}px`;
+//     }
+//   });
+
+//   document.addEventListener('mouseup', () => {
+//     isDragging = false;
+//     title.style.cursor = 'grab';
+//   })
+// }
+
+// if (innerWidth > 769) {
+//   chatBotDrag();
+// }
+
+
 // init
 window.addEventListener('resize', () => {
   let section02 = document.querySelector('.header_sec02');
