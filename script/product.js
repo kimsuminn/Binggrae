@@ -912,7 +912,7 @@ function product(list) {
   let moreBtn = document.querySelector('.itemList > button');
   let itemCnt = document.querySelector('.itemList h3');
 
-  let itemPerPage = 8;
+  let itemPerPage = 16;
   let currentPage = 1;
   let totalItems = list.length;
 
