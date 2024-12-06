@@ -8,7 +8,7 @@ __[원본 사이트](https://www.bing.co.kr/)__
 
 ### 1. main과 section 사이의 간격
 
-<img src="./readme/img_01.png"><img src="./readme/img_02.png">
+<img src="./readme/img_01.png"> <img src="./readme/img_02.png">
 
 좌: 원본 사이트 / 우: 클론 사이트
 
@@ -53,7 +53,7 @@ __[원본 사이트](https://www.bing.co.kr/)__
 
 ### 2. 슬라이드
 
-<img src="./readme/img_03.png"><img src="./readme/img_04.png"><img src="./readme/img_05.png">
+<img src="./readme/img_03.png"> <img src="./readme/img_04.png"> <img src="./readme/img_05.png">
 
 1, 2: 원본 사이트 / 3: 클론 사이트
 
