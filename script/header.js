@@ -59,7 +59,7 @@ function headerContainer() {
     }).join("");
   
     section01.innerHTML = `
-      <a href="/">
+      <a href="./index.html">
         ${logoList}
       </a>
     `;
@@ -123,13 +123,13 @@ function headerContainer() {
       if (val.title === '제품소개') {
         let subList = sub.map((val2, idx) => {
           return `
-            <li data-id=${idx+2}><a href="/product.html?category=${idx+2}">${val2}</a></li>
+            <li data-id=${idx+2}><a href="./product.html?category=${idx+2}">${val2}</a></li>
           `;
         }).join("");
 
         return `
           <li data-id=${val.id}>
-            <a href="/product.html?category=1">${val.title}</a>
+            <a href="./product.html?category=1">${val.title}</a>
             <ul class="depth02">
               ${subList}
             </ul>
@@ -196,11 +196,13 @@ function headerContainer() {
       })
     })
 
+
     // url에 따라 header menu 색상 변경
     mainMenu.forEach(val => {
       let mainA = val.querySelector('a');
+      let path = window.location.pathname.split('/').pop();
       
-      if (window.location.pathname == '/product.html') {
+      if (path == 'product.html') {
         if (Number(val.dataset.id) === 2) {
           mainA.classList.add('on');
         }
@@ -236,8 +238,8 @@ function headerContainer() {
           </span>
         </p>
         <ul>
-          <li><a href="/">KR</a></li>
-          <li><a href="/">EN</a></li>
+          <li><a href="./index.html">KR</a></li>
+          <li><a href="./index.html">EN</a></li>
         </ul>
       </div>
     `;
@@ -363,7 +365,7 @@ function hamMenu() {
       let subMenuList = subMenu.map((val, idx) => {
         return `
           <li data-id=${idx+1}>
-            <a href="/product.html?category=${idx+1}">${val}</a>
+            <a href="./product.html?category=${idx+1}">${val}</a>
             <figure><img src="https://kimsuminn.github.io/binggrae/img/layout/pc_ham_hover_img.png" alt="ham_hover"></figure>
           </li>
         `;
@@ -498,8 +500,8 @@ function hamMenu() {
 
     lang.classList.add('lang_2');
     lang.innerHTML = `
-      <li class='on'><a href="/">KR</a></li>
-      <li><a href="/">EN</a></li>
+      <li class='on'><a href="./index.html">KR</a></li>
+      <li><a href="./index.html">EN</a></li>
     `;
 
     aTag.innerText = '오시는길';
@@ -548,8 +550,9 @@ function hamMenu() {
   
   hamMain.forEach(val => {
     let mainA = val.querySelector('a');
+    let path = window.location.pathname.split('/').pop();
 
-    if (window.location.pathname == '/product.html') {
+    if (path == 'product.html') {
       if (Number(val.dataset.id) === 2) {
         if (innerWidth > 1024) {
           val.classList.add('on');
@@ -711,7 +714,9 @@ window.addEventListener('resize', () => {
   let hamMain = document.querySelectorAll('.hamberger_menu .ham_container .ham_sec02 .depth01 > li');
   
   hamMain.forEach(val => {
-    if (window.location.pathname == '/product.html') {
+    let path = window.location.pathname.split('/').pop();
+    
+    if (path == 'product.html') {
       if (Number(val.dataset.id) === 2) {
         if (innerWidth > 1024) {
           val.classList.add('on');
