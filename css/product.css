@@ -234,6 +234,7 @@
   display: flex;
   gap: 0.25rem;
   align-items: center;
+  word-break: keep-all;
 }
 
 .front_container .section .product .itemList ul li a .img .deco > div p::before {
@@ -268,6 +269,8 @@
 
 .front_container .section .product .itemList ul li a > p {
   font-size: 1rem;
+  word-break: keep-all;
+  text-align: center;
 }
 
 .front_container .section .product .itemList button {
@@ -294,10 +297,6 @@
   .front_container .section > .search .search {
     width: 80%;
   }
-}
-
-@media screen and (max-width: 1190px) {
-  
 }
 
 @media screen and (max-width: 1024px) {
