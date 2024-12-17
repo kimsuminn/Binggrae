@@ -668,7 +668,7 @@ function topBtn() {
         left: 0,
         behavior: 'smooth',
       })
-    })
+    });
   }
 
   function bottom() {

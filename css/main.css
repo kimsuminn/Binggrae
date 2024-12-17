@@ -126,15 +126,14 @@ main .main_container .section_02 .slider .swiper {
 main .main_container .section_02 .slider .swiper .swiper-wrapper {
   padding: 2rem 0;
   display: flex;
-  transform: translateY(2rem);
-  opacity: 0;
-  transition: .5s;
 }
 
 main .main_container .section_02 .slider .swiper .swiper-wrapper .swiper-slide {
   flex-shrink: 0;
-  transition: .5s;
   overflow: hidden;
+  transform: translateY(2rem);
+  opacity: 0;
+  transition: 1s;
 }
 
 main .main_container .section_02 .slider .swiper .swiper-wrapper .swiper-slide:hover {

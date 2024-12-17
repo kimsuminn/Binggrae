@@ -98,7 +98,7 @@ function product() {
   
     let slideAdd_01 = slide_item_01.map((val, idx) => {
       return `
-        <li class="swiper-slide">
+        <li class="swiper-slide" style="transition-delay: ${idx * 0.1}s">
           <a href="#">
             <figure><img src=${val.img} alt=${idx + 1}></figure>
             <span>${val.item}</span>
@@ -165,7 +165,7 @@ function product() {
   
     let slideAdd_02 = slide_item_02.map((val, idx) => {
       return `
-        <li class="swiper-slide">
+        <li class="swiper-slide" style="transition-delay: ${idx * 0.05}s">
           <div class="wrap">
             <img src=${val.img} alt=${idx + 1} class="title">
             <div class="hover">
@@ -277,11 +277,24 @@ counsel();
 
 // scroll event
 function scrollEvent() {
-  let slide_01 = document.querySelector('main .main_container .section_02 .slider .swiper_01 .swiper-wrapper');
-  let slide_02 = document.querySelector('main .main_container .section_02 .slider .swiper_02 .swiper-wrapper');
+  let slide_01 = document.querySelectorAll('main .main_container .section_02 .slider .swiper_01 .swiper-wrapper .swiper-slide');
+  let slide_02 = document.querySelectorAll('main .main_container .section_02 .slider .swiper_02 .swiper-wrapper .swiper-slide');
   let counsel = document.querySelector('main .main_container .section_03 .contents_box .counsel');
   let qnaBtn = document.querySelector('main .main_container .section_03 .contents_box .qna .qna_title button');
   let box = document.querySelector('main .main_container .section_04 .allbox');
+
+  function slideOnScroll(el) {
+    el.forEach(val => {
+      let elTop = val.getBoundingClientRect().top;
+      let windowHeight = window.innerHeight;
+
+      if (elTop < windowHeight) {
+        val.classList.add('visible');
+      } else {
+        val.classList.remove('visible');
+      }
+    })
+  }
   
   function onScroll(el) {
     let elTop = el.getBoundingClientRect().top;
@@ -295,8 +308,8 @@ function scrollEvent() {
   }
 
   window.addEventListener('scroll', () => {
-    onScroll(slide_01);
-    onScroll(slide_02);
+    slideOnScroll(slide_01);
+    slideOnScroll(slide_02);
     onScroll(counsel);
     onScroll(qnaBtn);
     onScroll(box);
